@@ -1,0 +1,20 @@
+/* ==========================================================================
+   Line component
+   ========================================================================== */
+
+@use '../../abstracts/' as *;
+@use 'sass:math' as *;
+
+/* line component */
+.c-line {
+  display: block;
+  width: 12%;
+  max-width: fs-rem(100px);
+  height: fs-rem(1px);
+  margin-left: fs-rem(12px);
+  background-color: var(--color-neutral-low-lighter);
+
+  @include mq($from: tablet) {
+    margin-left: fs-rem(24px);
+  }
+}

@@ -1,0 +1,81 @@
+/* ==========================================================================
+   Heading component
+   ========================================================================== */
+
+@use '../../abstracts/' as *;
+@use 'sass:math' as *;
+
+/* h1 */
+.c-heading__level1 {
+  @include fs-scale(font-size, (360px: 48px, 1080px: 82px, 1920px: 160px));
+
+  color: var(--color-neutral-extra-lighter);
+  font-weight: var(--font-weight-black);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-wide);
+
+  @include mq($from: tablet) {
+    @include fs-scale(font-size, (360px: 48px, 1080px: 82px, 1920px: 160px));
+  }
+}
+
+/* h1 emphasis modifier */
+.c-heading__level1--emphasis {
+  @include fs-scale(font-size, (360px: 52px + 28px, 1920px: 160px + 32px));
+
+  font-weight: var(--font-weight-bold);
+
+  @include mq($from: tablet) {
+    @include fs-scale(font-size, (360px: 52px + 28px, 1920px: 160px + 32px));
+  }
+}
+
+/* h1 moderate modifier */
+.c-heading__level1--moderate {
+  @include fs-scale(font-size, (360px: 52px - 28px, 1920px: 160px - 32px));
+
+  @include mq($from: tablet) {
+    @include fs-scale(font-size, (360px: 52px - 28px, 1920px: 160px - 32px));
+  }
+}
+
+/* h2 */
+.c-heading__level2 {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-8xl);
+  letter-spacing: var(--letter-spacing-wider);
+
+  @include mq($from: tablet) {
+    font-size: calc((var(--font-size-8xl) + var(--font-size-9xl)) / 2);
+  }
+
+  @include mq($from: desktop) {
+    font-size: var(--font-size-9xl);
+  }
+
+  @include mq($from: wide) {
+    font-size: var(--font-size-10xl);
+  }
+}
+
+/* h3 */
+.c-heading__level3 {
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-3xl);
+
+  @include mq($from: landscape) {
+    font-size: var(--font-size-3xl);
+  }
+
+  @include mq($from: tablet) {
+    font-size: var(--font-size-4xl);
+  }
+
+  @include mq($from: desktop) {
+    font-size: var(--font-size-4xl);
+  }
+
+  @include mq($from: wide) {
+    font-size: var(--font-size-7xl);
+  }
+}

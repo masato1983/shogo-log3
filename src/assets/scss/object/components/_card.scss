@@ -1,0 +1,85 @@
+/* ==========================================================================
+   Card component
+   ========================================================================== */
+
+@use '../../abstracts/' as *;
+@use 'sass:math' as *;
+
+/* card overview */
+.c-card {
+  display: flex; // Required when adding a background color style to a textbox.
+  flex-direction: column; // Required when adding a background color style to a textbox.
+  width: 100%;
+
+  @include mq($from: desktop) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+/* media layout */
+.c-card__media {
+  z-index: $z-index-card-media;
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s var(--ease-in-out-cubic), filter 0.5s var(--ease-in-out-cubic);
+
+  @include mq($from: desktop) {
+    width: 45%;
+  }
+
+  @include hover {
+    transform: scale(0.98) rotate(1deg);
+    filter: brightness(78%);
+  }
+}
+
+/* image layout */
+.c-card__image {
+  object-fit: cover;
+  border-radius: fs-rem(8px);
+}
+
+/* body layout */
+.c-card__body {
+  display: flex; // Push the button to the bottom of the text box
+  flex-direction: column; // Push the button to the bottom of the text box
+  flex-grow: 1; // Required when adding a background color style to a textbox.
+  padding: fs-rem(18px) fs-rem(0) fs-rem(0);
+
+  @include mq($from: desktop) {
+    width: 55%;
+    margin-top: fs-rem(-14px);
+    padding-top: fs-rem(0);
+    padding-left: fs-rem(42px);
+  }
+
+  @include mq($from: wide) {
+    margin-top: fs-rem(-20px);
+    padding-left: fs-rem(62px);
+  }
+}
+
+.c-card__title-supplementary {
+  margin-top: fs-rem(-12px);
+}
+
+/* description layout */
+.c-card__description {
+  margin-top: fs-rem(32px);
+
+  @include mq($from: desktop) {
+    margin-top: fs-rem(18px);
+  }
+}
+
+/* text layout */
+.c-card__text {
+  span {
+    padding-left: 1em;
+  }
+
+  &:nth-of-type(n+2) {
+    margin-top: fs-rem(24px);
+  }
+}

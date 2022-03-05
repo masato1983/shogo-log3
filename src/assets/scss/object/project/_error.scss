@@ -1,0 +1,28 @@
+/* ==========================================================================
+   Error project
+   ========================================================================== */
+
+@use '../../abstracts/' as *;
+@use 'sass:math' as *;
+
+/* base layout */
+.p-error {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: fs-rem(80px);
+  line-height: var(--line-height-normal);
+  text-align: center;
+}
+
+/* description */
+.p-error__description {
+  &:nth-of-type(3) {
+    margin-top: fs-rem(16px);
+  }
+}

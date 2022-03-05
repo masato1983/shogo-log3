@@ -1,0 +1,21 @@
+/* ==========================================================================
+   Padding utility
+   ========================================================================== */
+
+@use '../../abstracts/' as *;
+
+.u-pl-1 {
+  padding-left: fs-rem(4px);
+}
+
+.u-pl-2 {
+  padding-left: fs-rem(8px);
+}
+
+.u-pl-3 {
+  padding-left: fs-rem(12px);
+}
+
+.u-pl-4 {
+  padding-left: fs-rem(16px);
+}

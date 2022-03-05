@@ -1,0 +1,58 @@
+/* ==========================================================================
+   Button component
+   ========================================================================== */
+
+@use '../../abstracts/' as *;
+@use 'sass:math' as *;
+
+/* base style */
+.c-button {
+  display: inline-flex; // https://css-tricks.com/when-do-you-use-inline-block/#dont-forget-inline-flex-and-inline-grid, https://css-tricks.com/fixing-a-bug-in-low-resolution-mode/
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: fs-rem(6px);
+
+  // active style
+  &:active {
+    transform: translateY(fs-rem(1px));
+  }
+
+  // diabled style
+  &[disabled] {
+    opacity: 0.65;
+    pointer-events: none;
+  }
+}
+
+/* medium modifier */
+.c-button--md {
+  max-width: fs-rem(180px);
+  padding: fs-rem(7px) fs-rem(18px);
+
+  @include mq($from: tablet) {
+    max-width: fs-rem(220px);
+    padding: fs-rem(8px) fs-rem(20px);
+  }
+
+  @include mq($from: desktop) {
+    max-width: fs-rem(256px);
+    padding: fs-rem(10px) fs-rem(24px);
+  }
+}
+
+/* black modifier */
+.c-button--black { // https://whocanuse.com/, https://webaim.org/resources/contrastchecker/
+  background-color: var(--color-neutral-mid);
+  transition: background-color 0.3s var(--ease-in-out-cubic);
+
+  // prefer-reduced-motion
+  @media screen and (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+
+  // hover style
+  @include hover { // https://css-tricks.com/solving-sticky-hover-states-with-media-hover-hover/, https://css-tricks.com/interaction-media-features-and-their-potential-for-incorrect-assumptions/, https://css-tricks.com/touch-devices-not-judged-size/, https://www.npmjs.com/package/hover-media-query
+    background-color: var(--color-neutral-extra-mid);
+  }
+}

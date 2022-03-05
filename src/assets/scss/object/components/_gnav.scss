@@ -1,0 +1,110 @@
+/* ==========================================================================
+   gnav component
+   ========================================================================== */
+
+@use '../../abstracts/' as *;
+@use 'sass:math' as *;
+
+/* mobile menu layout */
+@include mq($until: headerMenu) {
+  /* overview */
+  .c-gnav {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100vw;
+    padding-top: fs-rem(80px + 56px);
+    padding-bottom: fs-rem(120px);
+    padding-left: fs-rem(60px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: var(--color-neutral-darken-alpha-extra-low);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s var(--ease-in-out-cubic), visibility 0.3s var(--ease-in-out-cubic);
+
+    &.is-active {
+      z-index: $z-index-header-menu-active;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+  }
+
+  /* list layout */
+  .c-gnav__list {
+    font-size: var(--font-size-2xl);
+    text-align: left;
+  }
+
+  /* item layout */
+  .c-gnav__item {
+    &:nth-of-type(n+2) {
+      margin-top: fs-rem(40px);
+    }
+  }
+}
+
+/* desktop menu layout */
+@include mq($from: headerMenu) {
+  /* overview */
+  .c-gnav {
+    height: 100%;
+    visibility: hidden; // Avoid visibility transitions when the view size changes from 840px to 839px.
+  }
+
+  /* list layout */
+  .c-gnav__list {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    visibility: visible;
+  }
+
+  /* item layout */
+  .c-gnav__item {
+    display: flex;
+    align-items: center;
+
+    &:nth-of-type(n+2) {
+      &::before {
+        display: block;
+        width: fs-rem(1px);
+        height: fs-rem(20px);
+        margin-right: fs-rem(18px);
+        margin-left: fs-rem(18px);
+        background-color: var(--color-neutral-extra-lighter);
+        content: '';
+
+        .l-header.is-pinned & {
+          background-color: var(--color-neutral-extra-lighter);
+        }
+      }
+    }
+
+    .l-header.is-pinned & {
+      color: var(--color-neutral-extra-lighter);
+      font-weight: var(--font-weight-normal);
+      font-size: var(--font-size-xl);
+    }
+  }
+}
+
+.c-gnav__link {
+  transition: opacity 0.3s var(--ease-in-out-cubic);
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+
+  @include hover {
+    opacity: 0.6;
+  }
+}

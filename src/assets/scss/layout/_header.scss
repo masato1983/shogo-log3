@@ -1,0 +1,137 @@
+/* ==========================================================================
+   Header layout
+   ========================================================================== */
+
+@use '../abstracts/' as *;
+@use 'sass:math' as *;
+
+/* overall style */
+.l-header {
+  z-index: $z-index-header;
+  width: 100vw; // Workaround body-scroll-lock bug
+  margin-top: fs-rem(28px);
+  margin-bottom: fs-rem(-1px); // Workaround the problem of gaps between header elements.
+  background: var(--color-neutral-darken);
+
+  @include mq($from: tablet) {
+    margin-top: fs-rem(60px);
+  }
+
+  @include mq($from: desktop) {
+    margin-top: fs-rem(80px);
+  }
+}
+
+/* header on scroll (pre-pinned) */
+.l-header.is-pre-pinned {
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* header on scroll (pinned) */
+.l-header.is-pinned {
+  position: sticky;
+  top: 0;
+  background: var(--color-neutral-darken-alpha-low);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.7s var(--ease-in-out-cubic), visibility 0.7s var(--ease-in-out-cubic);
+  pointer-events: none;
+}
+
+/* header on scroll (visible) */
+.l-header.is-visible {
+  z-index: $z-index-header;
+  background: var(--color-neutral-darken-alpha-low);
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* inner layout */
+.l-header__inner {
+  display: flex;
+  align-items: center;
+  height: fs-rem(48px);
+
+  @include mq($from: tablet) {
+    height: fs-rem(68px);
+  }
+}
+
+/* logo layout */
+.l-header__logo {
+  z-index: $z-index-header-logo;
+}
+
+/* text style */
+.l-header__text {
+  .l-header.is-pinned & {
+    color: var(--color-neutral-extra-lighter);
+    font-weight: var(--font-weight-normal);
+    font-size: var(--font-size-3xl);
+  }
+
+  .l-header__logo.is-active & {
+    color: var(--color-neutral-extra-lighter);
+  }
+}
+
+/* navigation layout */
+.l-header__navigation {
+  position: relative;
+  z-index: $z-index-header-navigation;
+  height: 100%;
+  margin-right: fs-rem(-20px);
+  margin-left: auto;
+
+  @include mq($from: headerMenu) {
+    margin-right: fs-rem(0);
+  }
+}
+
+/* button layout */
+.l-header__button {
+  position: relative;
+  z-index: $z-index-header-button;
+  width: fs-rem(90px);
+  height: 100%;
+  background-color: transparent;
+
+  @include mq($from: headerMenu) {
+    display: none;
+  }
+
+  .l-header.is-pinned & {
+    width: fs-rem(64px);
+  }
+}
+
+/* menu layout */
+.l-header__menu {
+  z-index: $z-index-header-menu;
+
+  @include mq($from: headerMenu) {
+    display: block;
+  }
+}
+
+/* bland-space layout */
+.l-header__blank-space {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $z-index-header-blank-space;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--color-neutral-mid-alpha-high);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s var(--ease-in-out-cubic), visibility 0.3s var(--ease-in-out-cubic);
+
+  &.is-active {
+    visibility: visible;
+    opacity: 1;
+  }
+}

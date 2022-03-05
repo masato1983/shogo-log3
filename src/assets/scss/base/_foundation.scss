@@ -1,0 +1,71 @@
+/* ==========================================================================
+   Foundation base
+   ========================================================================== */
+
+@use '../abstracts/' as *;
+@use 'sass:math' as *;
+
+html {
+  background: var(--color-neutral-darken);
+}
+
+body,
+header,
+main,
+footer {
+  width: 100vw; // Workaround the problem of horizontal stretching
+}
+
+body {
+  overflow-x: hidden; // Workaround side-scrolling problem caused by full-bleed.
+  color: var(--color-neutral-extra-lighter);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family-primary);
+  line-height: var(--line-height-loose);
+  letter-spacing: var(--letter-spacing-wide);
+  hyphens: auto;
+  background-color: var(--color-neutral-darken);
+  hanging-punctuation: allow-end;
+  text-size-adjust: 100%;
+  font-kerning: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-break: loose;
+  text-rendering: geometricPrecision;
+
+  @include mq($from: tablet) {
+    font-size: calc((var(--font-size-sm) + var(--font-size-md)) / 2);
+  }
+
+  @include mq($from: desktop) {
+    font-size: var(--font-size-md);
+  }
+
+  @include mq($from: wide) {
+    font-size: var(--font-size-lg);
+  }
+}
+
+main {
+  flex-grow: 1; // Keep the footer at the bottom
+  overflow-x: hidden;
+}
+
+a,
+button {
+  @include focus;
+
+  display: block;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+dt,
+th {
+  font-weight: normal;
+}

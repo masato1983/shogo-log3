@@ -1,0 +1,100 @@
+<head prefix="<%= page['prefix'] %>">
+    <!-- metatags -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <meta name="keywords" content="<%= page['keywords'] %>" />
+    <meta name="description" content="<%= page['description'] %>" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- crawlersNoindexNofollow (公開時削除) -->
+    <% if(process.env.NODE_ENV === 'development') { %>
+    <meta name="robots" content="noindex, nofollow" />
+    <% } %>
+
+    <!-- title -->
+    <title><%= page['title'] %> | <%= common['siteName'] %></title>
+
+    <!-- OGP -->
+    <meta property="og:locale" content="<%= common['og:locale'] %>" />
+    <meta property="og:locale:alternate" content="<%= common['og:locale:alternate'] %>" />
+    <meta property="og:title" content="<%= page['title'] %> | <%= common['siteName'] %>" />
+    <meta property="og:type" content="<%= page['og:type'] %>" />
+    <meta property="og:url" content="<%= page['og:url'] %>" />
+    <meta property="og:image" content="<%= path['img:ogp'] %><%= page['og:image'] %>" />
+    <meta property="og:image:secure_url" content="<%= path['img:ogp'] %><%= page['og:image:secure_url'] %>" />
+    <meta property="og:image:type" content="<%= page['og:image:type'] %>" />
+    <meta property="og:image:width" content="<%= page['og:image:width'] %>" />
+    <meta property="og:image:height" content="<%= page['og:image:height'] %>" />
+    <meta property="og:image:alt" content="<%= page['og:image:alt'] %>" />
+    <meta property="og:description" content="<%= page['og:description'] %>" />
+    <meta property="og:site_name" content="<%= common['og:site_name'] %>" />
+
+    <!-- twitter card -->
+    <meta name="twitter:card" content="<%= common['twitter:card']  %>" />
+    <meta name="twitter:site" content="<%= common['twitter:site']  %>" />
+    <meta name="twitter:image" content="<%= path['img:ogp'] %><%= page['twitter:image']  %>" />
+    <meta name="twitter:image:alt" content="<%= page['twitter:image:alt']  %>" />
+    <meta name="twitter:creator" content="<%= common['twitter:creator'] %>" />
+
+    <!-- facebook -->
+    <meta property="fb:app_id" content="<%= common['fb:app_id'] %>" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- canonical -->
+    <% if(process.env.NODE_ENV === 'production') { %>
+    <link rel="canonical" href="https://portfolio.coding11ty.com" />
+    <% } %>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet" />
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="<%= path['css'] %>destyle.css" />
+    <link rel="stylesheet" href="<%= path['css'] %>swiper-bundle.css" />
+    <link rel="stylesheet" href="<%= path['css'] %>aos.css" />
+    <link rel="stylesheet" href="<%= path['css'] %>style.css" />
+
+    <!-- script -->
+    <script src="https://sdk.form.run/js/v2/formrun.js"></script>
+    <script src="<%= path['js'] %>script.js" defer></script>
+
+    <!-- structured data -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org/",
+            "@type": "Organization",
+            "url": "https://portfolio.coding11ty.com",
+            "logo": "/android-chrome-512x512.png",
+            "name": "masato furuta",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "",
+                "contactType": "Customer service",
+                "areaServed": "JP",
+                "availableLanguage": "Japanese"
+            },
+            "location": {
+                "@type": "Place",
+                "@id": "https://portfolio.coding11ty.com",
+                "name": "masato furuta",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "JP",
+                    "postalCode": "",
+                    "addressRegion": "北海道",
+                    "addressLocality": "",
+                    "streetAddress": ""
+                }
+            },
+            "sameAs": ["https://twwiter.com", "https://facebook.com"]
+        }
+    </script>
+</head>

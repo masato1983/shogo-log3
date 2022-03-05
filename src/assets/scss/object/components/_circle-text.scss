@@ -1,0 +1,55 @@
+/* ==========================================================================
+   Circle-text component
+   ========================================================================== */
+
+@use '../../abstracts/' as *;
+@use 'sass:math' as *;
+
+.c-circle-text-wrapper {
+  position: relative;
+  top: fs-rem(170px);
+  right: fs-rem(-90px);
+  overflow: hidden;
+  font-size: var(--font-size-2xs);
+
+  @include mq($from: landscape) {
+    top: fs-rem(160px);
+    right: fs-rem(-180px);
+    font-size: var(--font-size-lg);
+  }
+
+  @include mq($from: tablet) {
+    top: fs-rem(240px);
+    right: fs-rem(-320px);
+    font-size: var(--font-size-xl);
+  }
+
+  @include mq($from: desktop) {
+    top: fs-rem(320px);
+    right: fs-rem(-480px);
+    font-size: var(--font-size-3xl);
+  }
+}
+
+/* circle text animation style */
+.c-circle-text {
+  animation: circle-text-animation 120s infinite linear;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@keyframes circle-text-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

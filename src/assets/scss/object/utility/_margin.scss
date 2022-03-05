@@ -1,0 +1,21 @@
+/* ==========================================================================
+   Margin utility
+   ========================================================================== */
+
+@use '../../abstracts/' as *;
+
+.u-ml-1 {
+  padding-left: fs-rem(4px);
+}
+
+.u-ml-2 {
+  padding-left: fs-rem(8px);
+}
+
+.u-ml-3 {
+  padding-left: fs-rem(12px);
+}
+
+.u-ml-4 {
+  padding-left: fs-rem(16px);
+}

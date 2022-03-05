@@ -1,0 +1,46 @@
+/* ==========================================================================
+   Icon component
+   ========================================================================== */
+
+@use '../../abstracts/' as *;
+@use 'sass:math' as *;
+
+/* external-link style */
+.c-icon__external-link {
+  fill: var(--color-neutral-extra-lighter);
+}
+
+/* medium style */
+.c-icon__external-link--md {
+  width: fs-rem(16px);
+  height: fs-rem(16px);
+
+  @include mq($from: tablet) {
+    width: calc((16px + 20px) / 2);
+    height: calc((16px + 20px) / 2);
+  }
+
+  @include mq($from: desktop) {
+    width: fs-rem(20px);
+    height: fs-rem(20px);
+  }
+}
+
+/* header modifier */
+.c-icon__external-link--header {
+  display: inline-block;
+  vertical-align: fs-rem(-3px);
+
+  .l-header.is-pinned & {
+    fill: var(--color-neutral-extra-lighter);
+
+    @include mq($from: tablet) {
+      width: fs-rem(16px);
+      height: fs-rem(16px);
+    }
+  }
+
+  .l-header.is-visible & {
+    fill: var(--color-neutral-extra-lighter);
+  }
+}

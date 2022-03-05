@@ -1,0 +1,44 @@
+/* ==========================================================================
+   Table component
+   ========================================================================== */
+
+@use '../../abstracts/' as *;
+@use 'sass:math' as *;
+
+/* table overview */
+.c-table {
+  width: 100%;
+  margin-top: fs-rem(24px);
+  border: fs-rem(1px) solid var(--color-neutral-lightest-alpha-middle);
+  border-collapse: collapse;
+}
+
+/* tr layout */
+.c-table__row {
+  display: flex;
+
+  &:not(:last-child) {
+    border-bottom: fs-rem(1px) solid var(--color-neutral-lightest-alpha-middle);
+  }
+}
+
+/* header & data common layout */
+.c-table__header,
+.c-table__data {
+  padding: fs-rem(3px) fs-rem(0) fs-rem(3px) fs-rem(8px);
+
+  @include mq($from: tablet) {
+    padding: fs-rem(3px) fs-rem(0) fs-rem(3px) fs-rem(12px);
+  }
+}
+
+/* header style */
+.c-table__header {
+  width: fs-rem(24%);
+  background-color: var(--color-neutral-mid);
+  border-right: fs-rem(1px) solid var(--color-neutral-lightest-alpha-middle);
+}
+
+.c-table__data {
+  width: fs-rem(80%);
+}

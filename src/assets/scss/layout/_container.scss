@@ -1,0 +1,60 @@
+/* ==========================================================================
+   Container layout
+   ========================================================================== */
+
+@use '../abstracts/' as *;
+
+/* base container */
+.l-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* width element */
+.l-container__width--normal {
+  width: calc(335px / 375px * 100%); // 89.3%
+}
+
+/* max-width element (xs) */
+.l-container__max-width--xs {
+  @include mq($from: tablet) {
+    max-width: fs-rem(720px);
+  }
+}
+
+/* max-width element (sm) */
+.l-container__max-width--sm {
+  @include mq($from: tablet) {
+    max-width: fs-rem(984px);
+  }
+}
+
+/* max-width element (md) */
+.l-container__max-width--md {
+  @include mq($from: tablet) {
+    max-width: fs-rem(1016px);
+  }
+}
+
+/* max-width element (xl) */
+.l-container__max-width--xl {
+  @include mq($from: tablet) {
+    max-width: fs-rem(1920px);
+  }
+}
+
+/* padding element */
+.l-container__padding--narrow {
+  padding-right: fs-rem(20px);
+  padding-left: fs-rem(20px);
+
+  @include mq($from: headerMenu) {
+    padding-right: fs-rem(30px);
+    padding-left: fs-rem(30px);
+  }
+
+  @include mq($from: desktop) {
+    padding-right: fs-rem(40px);
+    padding-left: fs-rem(40px);
+  }
+}

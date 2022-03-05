@@ -1,0 +1,100 @@
+/* ==========================================================================
+   Footer layout
+   ========================================================================== */
+
+@use '../abstracts/' as *;
+@use 'sass:math' as *;
+
+/* overview */
+.l-footer {
+  background-color: var(--color-neutral-darken);
+}
+
+/* loop layout */
+// https://chocolat5.com/tips/loop-image-animation/#css%E3%82%A2%E3%83%8B%E3%83%A1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%A7%E4%BD%9C%E3%82%8B%E7%84%A1%E9%99%90%E3%83%AB%E3%83%BC%E3%83%97%E3%82%A2%E3%83%8B%E3%83%A1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%EF%BC%88%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E8%A6%81%E7%B4%A0%EF%BC%89
+.l-footer__loop {
+  display: flex;
+  width: 100%;
+  margin: fs-rem(62px) fs-rem(0);
+  padding: fs-rem(16px) fs-rem(0);
+  overflow: hidden;
+
+  @include mq($from: tablet) {
+    margin: fs-rem(120px) fs-rem(0);
+  }
+
+  @include mq($from: wide) {
+    margin: fs-rem(160px) fs-rem(0);
+  }
+}
+
+/* text layout */
+.l-footer__text {
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+  white-space: nowrap;
+
+  &:nth-child(odd) {
+    animation: l-footer-loop1 120s -60s linear infinite;
+
+    @include mq($from: tablet) {
+      animation: l-footer-loop1 140s -70s linear infinite;
+    }
+
+    @include mq($from: wide) {
+      animation: l-footer-loop1 160s -80s linear infinite;
+    }
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
+  }
+
+  &:nth-child(even) {
+    animation: l-footer-loop2 120s  linear infinite;
+
+    @include mq($from: tablet) {
+      animation: l-footer-loop2 140s  linear infinite;
+    }
+
+    @include mq($from: wide) {
+      animation: l-footer-loop2 160s  linear infinite;
+    }
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
+  }
+
+  .l-footer__loop:hover & {
+    animation-play-state: paused;
+  }
+}
+
+/* animation loop1 */
+@keyframes l-footer-loop1 {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* animation loop2 */
+@keyframes l-footer-loop2 {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-200%);
+  }
+}
+
+/* copyright layout */
+.l-footer__copyright {
+  padding-bottom: fs-rem(13px);
+}

@@ -1,0 +1,125 @@
+/* ==========================================================================
+   Top-skill project
+   ========================================================================== */
+
+@use '../../../abstracts/' as *;
+@use 'sass:math' as *;
+
+/* skill layout */
+.p-top-skill {
+  margin-top: fs-rem(80px);
+
+  @include mq($from: tablet) {
+    margin-top: fs-rem(100px);
+  }
+
+  @include mq($from: desktop) {
+    margin-top: fs-rem(120px);
+  }
+
+  @include mq($from: wide) {
+    margin-top: fs-rem(220px);
+  }
+}
+
+/* title layout */
+.p-top-skill__title {
+  display: flex;
+  align-items: center;
+}
+
+/* textbox laout */
+.p-top-skill__textbox {
+  margin-top: fs-rem(24px);
+
+  @include mq($from: desktop) {
+    margin-top: fs-rem(32px);
+  }
+
+  @include mq($from: wide) {
+    margin-top: fs-rem(48px);
+  }
+}
+
+/* text layout */
+.p-top-skill__text {
+  &:nth-of-type(n+2) {
+    margin-top: fs-rem(24px);
+  }
+}
+
+/* list layout */
+.p-top-skill__list {
+  margin-top: fs-rem(48px);
+
+  @include mq($from: tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: fs-rem(56px);
+    margin-left: fs-rem(-48px);
+  }
+
+  @include mq($from: wide) {
+    margin-top: fs-rem(120px);
+    margin-left: fs-rem(-68px);
+  }
+}
+
+/* item layout */
+.p-top-skill__item {
+  @include mq($from: tablet) {
+    width: div(100%, 2);
+    padding-left: fs-rem(48px);
+  }
+
+  @include mq($from: wide) {
+    padding-left: fs-rem(68px);
+  }
+
+  &:nth-of-type(n+2) {
+    @include mq($until: tablet) {
+      margin-top: fs-rem(24px);
+    }
+  }
+
+  &:nth-of-type(n+3) {
+    @include mq($from: tablet) {
+      margin-top: fs-rem(64px);
+    }
+
+    @include mq($from: wide) {
+      margin-top: fs-rem(82px);
+    }
+  }
+
+  &:nth-of-type(1).aos-animate {
+    @include mq($from: tablet) {
+      transition-delay: 0.5s;
+    }
+  }
+
+  &:nth-of-type(2).aos-animate {
+    @include mq($from: tablet) {
+      transition-delay: 1s;
+    }
+  }
+
+  &:nth-of-type(3).aos-animate {
+    @include mq($from: tablet) {
+      transition-delay: 0.5s;
+    }
+  }
+
+  &:nth-of-type(4).aos-animate {
+    @include mq($from: tablet) {
+      transition-delay: 1s;
+    }
+  }
+}
+
+/* data layout */
+.p-top-skill__data {
+  &:nth-of-type(n+2) {
+    margin-top: fs-rem(24px);
+  }
+}

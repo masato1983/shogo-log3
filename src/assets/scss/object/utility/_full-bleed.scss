@@ -1,0 +1,48 @@
+/* ==========================================================================
+   Full-bleed utility
+   ========================================================================== */
+
+@use '../../abstracts/' as *;
+
+// https://notes.zander.wtf/full-bleed-utility
+// https://archive.hankchizljaw.com/wrote/creating-a-full-bleed-css-utility/
+// https://css-tricks.com/full-width-containers-limited-width-parents/#article-header-id-6
+// https://css-tricks.com/full-width-containers-limited-width-parents/#article-header-id-6
+
+/* all */
+.u-full-bleed-all {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+/* only mobile */
+.u-full-bleed-mobile {
+  @include mq($until: tablet) {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+  }
+}
+
+/* over tablet */
+.u-full-bleed-tablet {
+  @include mq($from: tablet) {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+  }
+}
+
+/* over desktop */
+.u-full-bleed-desktop {
+  @include mq($from: desktop) {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+  }
+}
+
+/* over wide */
+.u-full-bleed-wide {
+  @include mq($from: desktop) {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+  }
+}

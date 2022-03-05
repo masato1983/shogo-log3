@@ -1,0 +1,29 @@
+// ==========================================================================
+// Hamburger component
+// ==========================================================================
+
+@use '../../abstracts/' as *;
+@use 'vendors/delicious-hamburgers/scss/base' with (
+  $hamburger-size: 100%,
+  $hamburger-color: var(--color-neutral-lightest),
+  $hamburger-thickness: 3px,
+  $hamburger-padding: 20px,
+  $hamburger-bar-spacing: 6px,
+  $hamburger-bar-border-radius: 100vh,
+  $hamburger-animations: ('simple')
+);
+
+.c-hamburger--simple .c-hamburger__line:nth-child(-n+3) {
+  @media screen and (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
+.l-header.is-pinned .c-hamburger__line:nth-child(-n+3) {
+  height: fs-rem(1px);
+  background-color: var(--color-neutral-extra-lighter);
+}
+
+.c-hamburger.is-active .c-hamburger__line:nth-child(-n+3) {
+  background-color: var(--color-neutral-extra-lighter);
+}

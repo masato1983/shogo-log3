@@ -1,0 +1,17 @@
+/* ==========================================================================
+   Flex layout
+   ========================================================================== */
+
+@use '../abstracts/' as *;
+@use 'sass:math' as *;
+
+.l-flex__container-wrapper {
+  display: flex; // https://github.com/philipwalton/flexbugs#flexbug-3
+  flex-direction: column; // https://github.com/philipwalton/flexbugs#flexbug-3
+}
+
+.l-flex__container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

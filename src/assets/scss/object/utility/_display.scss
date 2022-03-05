@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Display utility
+   ========================================================================== */
+
+@use '../../abstracts/' as *;
+
+/* inline */
+.u-display__inline {
+  display: inline;
+}
+
+/* block */
+.u-display__block {
+  display: block;
+}
+
+/* block (sp) */
+.u-display__block--sp {
+  @include mq($from: tablet) {
+    display: inline;
+  }
+}

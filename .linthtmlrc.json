@@ -1,0 +1,19 @@
+{
+    "extends": "./node_modules/@linthtml/linthtml-config-recommended",
+    "maxerr": false,
+    "text-ignore-regex": false,
+    "raw-ignore-regex": false,
+    "attr-name-ignore-regex": false,
+    "id-class-ignore-regex": false,
+    "line-max-len-ignore-regex": false,
+    "rules": {
+        "attr-quote-style": [true, "double"],
+        "attr-name-style": false,
+        "attr-req-value": false,
+        "doctype-first": false,
+        "img-req-alt": false,
+        "line-max-len": false,
+        "title-max-len": [true, 60],
+        "attr-bans": [true, ["align", "background", "bgcolor", "border", "longdesc", "marginwidth", "marginheight", "scrolling", "style"]]
+    }
+}

@@ -1,0 +1,64 @@
+<header class="l-header">
+    <div class="l-container l-container__padding--narrow l-container__max-width--xl">
+        <div class="l-header__inner" data-scroll-header="true">
+            <div class="l-header__logo">
+                <a class="c-logo__link" href="<%= path['root'] %>">
+                    <% if (page === 'top') { %>
+                    <h1 class="l-header__text c-text__3xl c-text--bold c-text--wider"><span class="u-visually-hidden">古田雅大の</span>Portfolio</h1>
+                    <% } else { %>
+                    <span class="l-header__text c-text__3xl c-text--bold c-text--wider"><span class="u-visually-hidden">古田雅大の</span>Portfolio</span>
+                    <% } %>
+                </a>
+            </div>
+            <nav class="l-header__navigation">
+                <div class="l-header__button">
+                    <button class="c-hamburger c-hamburger--simple" id="js-hamburger" aria-expanded="false" type="button">
+                        <span class="u-visually-hidden">メニューを開く</span>
+                        <span class="c-hamburger__inner">
+                            <span class="c-hamburger__line"></span>
+                            <span class="c-hamburger__line"></span>
+                            <span class="c-hamburger__line"></span>
+                        </span>
+                    </button>
+                </div>
+                <div class="l-header__menu c-gnav">
+                    <ul class="c-gnav__list">
+                        <li class="c-gnav__item c-text__xl c-text--bold c-text--wider">
+                            <a class="c-gnav__link" href="https://www.wantedly.com/id/masato_0821" target="_blank" rel="noopener norefferrer">
+                                <span>Wantedly</span>
+                                <svg class="c-icon__external-link c-icon__external-link--md c-icon__external-link--header" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M10.604 1h4.146a.25.25 0 01.25.25v4.146a.25.25 0 01-.427.177L13.03 4.03 9.28 7.78a.75.75 0 01-1.06-1.06l3.75-3.75-1.543-1.543A.25.25 0 0110.604 1zM3.75 2A1.75 1.75 0 002 3.75v8.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 12.25v-3.5a.75.75 0 00-1.5 0v3.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-8.5a.25.25 0 01.25-.25h3.5a.75.75 0 000-1.5h-3.5z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="c-gnav__item c-text__xl c-text--bold c-text--wider">
+                            <a class="c-gnav__link" href="https://zenn.dev/massa" target="_blank" rel="noopener norefferrer">
+                                <span>Zenn</span>
+                                <svg class="c-icon__external-link c-icon__external-link--md c-icon__external-link--header" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M10.604 1h4.146a.25.25 0 01.25.25v4.146a.25.25 0 01-.427.177L13.03 4.03 9.28 7.78a.75.75 0 01-1.06-1.06l3.75-3.75-1.543-1.543A.25.25 0 0110.604 1zM3.75 2A1.75 1.75 0 002 3.75v8.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 12.25v-3.5a.75.75 0 00-1.5 0v3.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-8.5a.25.25 0 01.25-.25h3.5a.75.75 0 000-1.5h-3.5z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="c-gnav__item c-text__xl c-text--bold c-text--wider">
+                            <a class="c-gnav__link" href="https://twitter.com/jinen_syouten" target="_blank" rel="noopener norefferrer">
+                                <span>Twitter</span>
+                                <svg class="c-icon__external-link c-icon__external-link--md c-icon__external-link--header" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M10.604 1h4.146a.25.25 0 01.25.25v4.146a.25.25 0 01-.427.177L13.03 4.03 9.28 7.78a.75.75 0 01-1.06-1.06l3.75-3.75-1.543-1.543A.25.25 0 0110.604 1zM3.75 2A1.75 1.75 0 002 3.75v8.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 12.25v-3.5a.75.75 0 00-1.5 0v3.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-8.5a.25.25 0 01.25-.25h3.5a.75.75 0 000-1.5h-3.5z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="c-gnav__item c-text__xl c-text--bold c-text--wider">
+                            <a class="c-gnav__link" href="https://github.com/masato1983" target="_blank" rel="noopener norefferrer">
+                                <span>GitHub</span>
+                                <svg class="c-icon__external-link c-icon__external-link--md c-icon__external-link--header" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M10.604 1h4.146a.25.25 0 01.25.25v4.146a.25.25 0 01-.427.177L13.03 4.03 9.28 7.78a.75.75 0 01-1.06-1.06l3.75-3.75-1.543-1.543A.25.25 0 0110.604 1zM3.75 2A1.75 1.75 0 002 3.75v8.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 12.25v-3.5a.75.75 0 00-1.5 0v3.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-8.5a.25.25 0 01.25-.25h3.5a.75.75 0 000-1.5h-3.5z" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="l-header__blank-space"></div>
+            </nav>
+        </div>
+    </div>
+</header>

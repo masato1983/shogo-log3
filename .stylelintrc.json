@@ -1,0 +1,37 @@
+{
+    "extends": ["stylelint-config-standard", "stylelint-config-sass-guidelines", "stylelint-config-recommended-scss", "stylelint-config-rational-order-fix"],
+    "plugins": ["@namics/stylelint-bem"],
+    "defaultSeverity": "warning",
+    "rules": {
+        "plugin/stylelint-bem-namics": {
+            "patternPrefixes": [],
+            "helperPrefixes": []
+        },
+        "alpha-value-notation": "number",
+        "at-rule-no-vendor-prefix": null,
+        "color-function-notation": "legacy",
+        "declaration-block-no-redundant-longhand-properties": null,
+        "max-line-length": null,
+        "max-nesting-depth": [
+            2,
+            {
+                "ignoreAtRules": ["each", "media", "supports", "include"]
+            }
+        ],
+        "number-max-precision": null,
+        "property-no-vendor-prefix": null,
+        "value-no-vendor-prefix": null,
+        "selector-class-pattern": null,
+        "selector-max-compound-selectors": null,
+        "unit-no-unknown": [
+            true,
+            {
+                "ignoreFunctions": ["image-set", "-webkit-image-set"]
+            }
+        ],
+        "value-keyword-case": null,
+        "font-family-no-missing-generic-family-keyword": null,
+        "order/properties-alphabetical-order": null,
+        "function-calc-no-unspaced-operator": null
+    }
+}
