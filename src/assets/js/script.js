@@ -12,15 +12,11 @@ import 'core-js/modules/es.promise';
 // const circleType = new CircleType(document.querySelector('.c-circle-text'));
 
 // parallax (https://web.dev/prefers-reduced-motion/)
-import './vendors/rellax/rellax';
+import Rellax from './vendors/rellax/rellax';
 
 let rellaxAboutImage = new Rellax('.p-top-about__media--rellax', {
-    center: false, // default: false
     wrapper: '.p-top-about__media-wrapper', // default: null(body)
     relativeToWrapper: true, // https://github.com/dixonandmoe/rellax/issues/120
-    round: true, // default: ?
-    vertical: true, // default: true
-    horizontal: false, // default: false
     breakpoints: [540, 1080, 1300],
 });
 
@@ -321,7 +317,6 @@ new Swiper('.p-top-works__swiper', {
 
 // form validation bouncer
 import Bouncer from 'formbouncerjs';
-import Rellax from 'rellax';
 
 new Bouncer('form', {
     messages: {
