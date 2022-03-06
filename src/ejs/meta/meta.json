@@ -3,6 +3,7 @@
         "root": "/",
         "js": "/assets/js/",
         "css": "/assets/css/",
+        "css:vendors": "/assets/css/vendors/",
         "img:common": "/assets/img/common/",
         "img:ogp": "/assets/img/ogp/",
         "img:top": "/assets/img/top/",
