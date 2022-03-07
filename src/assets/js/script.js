@@ -6,6 +6,11 @@ import 'core-js/modules/es.object.assign';
 import 'core-js/modules/es.number.is-nan';
 import 'core-js/modules/es.string.repeat';
 import 'core-js/modules/es.promise';
+import info from '/breakpoints.json';
+
+const mobile = info.breakpoints.mobile;
+const desktop = info.breakpoints.desktop;
+const wide = info.breakpoints.wide;
 
 // circle text
 // import CircleType from 'circletype';
@@ -17,7 +22,7 @@ import Rellax from './vendors/rellax/rellax';
 let rellaxAboutImage = new Rellax('.p-top-about__media--rellax', {
     wrapper: '.p-top-about__media-wrapper', // default: null(body)
     relativeToWrapper: true, // https://github.com/dixonandmoe/rellax/issues/120
-    breakpoints: [540, 1080, 1300],
+    breakpoints: [mobile, desktop, wide],
 });
 
 const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -295,11 +300,11 @@ new Swiper('.p-top-works__swiper', {
     speed: 300,
     spaceBetween: 48,
     breakpoints: {
-        724: {
+        mobile: {
             speed: 600,
         },
-        1300: {
-            speed: 1000,
+        wide: {
+            speed: 3000,
         },
     },
     pagination: {

@@ -1,13 +1,14 @@
-$breakpoints: (
-    mobile:  360px,
-    landscape: 540px,
-    tablet:  724px,
-    desktop: 1080px,
-    wide:    1300px,
-    full:    1920px,
+@use '../variables/breakpoints' as *;
+@use 'sass:map';
 
-    // Tweakpoints
-    headerMenu: 840px,
+$breakpoints: (
+    mobile: map.get($breakpoints, 'mobile'),
+    landscape: map.get($breakpoints, 'landscape'),
+    tablet: map.get($breakpoints, 'tablet'),
+    laptop: map.get($breakpoints, 'laptop'),
+    desktop: map.get($breakpoints, 'desktop'),
+    wide: map.get($breakpoints, 'wide'),
+    full: map.get($breakpoints, 'full'),
 );
 
 $media-type: 'all';

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <%- include('./_include/_head', {page: top}); %>
+    <%- include('./_include/_head', {page: meta.top}); %>
     <body>
         <!-- loading -->
         <%- include('./_include/_loading'); %>
@@ -113,8 +113,8 @@
                 <div class="p-top-about__media-wrapper">
                     <div class="p-top-about__media p-top-about__media--rellax l-container l-container__width--normal l-container__max-width--xl" data-rellax-speed="-0.5" data-rellax-moble-speed="-0.75" data-rellax-tablet-speed="-1" data-rellax-desktop-speed="-1.25">
                         <picture>
-                            <source type="image/webp" sizes="(min-width: 2040px) 1920px, calc(94.19vw + 17px)" srcset="<%= path['img:top'] %>top-about-600x400.webp 600w, <%= path['img:top'] %>top-about-800x533.webp 800w, <%= path['img:top'] %>top-about-1200x800.webp 1200w, <%= path['img:top'] %>top-about-2400x1600.webp 2400w" />
-                            <img class="p-top-about__image" width="600" height="400" src="<%= path['img:top'] %>top-about-1200x800.jpg" sizes="(min-width: 2040px) 1920px, calc(94.19vw + 17px)" srcset="<%= path['img:top'] %>top-about-600x400.jpg 600w, <%= path['img:top'] %>top-about-800x533.jpg 800w, <%= path['img:top'] %>top-about-1200x800.jpg 1200w, <%= path['img:top'] %>top-about-2400x1600.jpg 2400w" alt="古田雅大のプロフィール写真" decoding="async" loading="lazy" />
+                            <source type="image/webp" sizes="(min-width: 2040px) 1920px, calc(94.19vw + 17px)" srcset="<%= meta.path['img:top'] %>top-about-600x400.webp 600w, <%= meta.path['img:top'] %>top-about-800x533.webp 800w, <%= meta.path['img:top'] %>top-about-1200x800.webp 1200w, <%= meta.path['img:top'] %>top-about-2400x1600.webp 2400w" />
+                            <img class="p-top-about__image" width="600" height="400" src="<%= meta.path['img:top'] %>top-about-1200x800.jpg" sizes="(min-width: 2040px) 1920px, calc(94.19vw + 17px)" srcset="<%= meta.path['img:top'] %>top-about-600x400.jpg 600w, <%= meta.path['img:top'] %>top-about-800x533.jpg 800w, <%= meta.path['img:top'] %>top-about-1200x800.jpg 1200w, <%= meta.path['img:top'] %>top-about-2400x1600.jpg 2400w" alt="古田雅大のプロフィール写真" decoding="async" loading="lazy" />
                         </picture>
                     </div>
                 </div>
@@ -177,8 +177,8 @@
                                         <div class="c-card__media">
                                             <a href="https://portfolio.coding11ty.com" target="blank" rel="noopener norefferrer">
                                                 <picture>
-                                                    <source type="image/webp" sizes="(min-width: 2280px) 864px, (min-width: 1080px) calc(36.44vw + 40px), (min-width: 340px) 89.31vw, 268px" srcset="<%= path['img:top'] %>top-works-01-478x235.webp 478w, <%= path['img:top'] %>top-works-01-637x313.webp 637w, <%= path['img:top'] %>top-works-01-956x470.webp 956w, <%= path['img:top'] %>top-works-01-1911x939.webp 1911w" />
-                                                    <img class="c-card__image" width="478" height="235" src="<%= path['img:top'] %>top-works-01-956x470.jpg" sizes="(min-width: 2280px) 864px, (min-width: 1080px) calc(36.44vw + 40px), (min-width: 340px) 89.31vw, 268px" srcset="<%= path['img:top'] %>top-works-01-478x235.jpg 478w, <%= path['img:top'] %>top-works-01-637x313.jpg 637w, <%= path['img:top'] %>top-works-01-top-works-01-956x470.jpg 956w, <%= path['img:top'] %>top-works-01-1911x939.jpg 1911w" alt="Myポートフォリオのトップページのスクリーンショット" decoding="async" loading="lazy" />
+                                                    <source type="image/webp" sizes="(min-width: 2280px) 864px, (min-width: 1080px) calc(36.44vw + 40px), (min-width: 340px) 89.31vw, 268px" srcset="<%= meta.path['img:top'] %>top-works-01-478x235.webp 478w, <%= meta.path['img:top'] %>top-works-01-637x313.webp 637w, <%= meta.path['img:top'] %>top-works-01-956x470.webp 956w, <%= meta.path['img:top'] %>top-works-01-1911x939.webp 1911w" />
+                                                    <img class="c-card__image" width="478" height="235" src="<%= meta.path['img:top'] %>top-works-01-956x470.jpg" sizes="(min-width: 2280px) 864px, (min-width: 1080px) calc(36.44vw + 40px), (min-width: 340px) 89.31vw, 268px" srcset="<%= meta.path['img:top'] %>top-works-01-478x235.jpg 478w, <%= meta.path['img:top'] %>top-works-01-637x313.jpg 637w, <%= meta.path['img:top'] %>top-works-01-top-works-01-956x470.jpg 956w, <%= meta.path['img:top'] %>top-works-01-1911x939.jpg 1911w" alt="Myポートフォリオのトップページのスクリーンショット" decoding="async" loading="lazy" />
                                                 </picture>
                                             </a>
                                         </div>
@@ -219,8 +219,8 @@
                                         <div class="c-card__media">
                                             <a href="https://shogo-log2.coding11ty.com" target="blank" rel="noopener norefferrer">
                                                 <picture>
-                                                    <source type="image/webp" sizes="(min-width: 2280px) 864px, (min-width: 1080px) calc(36.44vw + 40px), (min-width: 340px) 89.31vw, 268px" srcset="<%= path['img:top'] %>top-works-02-447x235.webp 447w, <%= path['img:top'] %>top-works-02-596x313.webp 596w, <%= path['img:top'] %>top-works-02-895x469.webp 895w, <%= path['img:top'] %>top-works-02-1789x938.webp 1789w" />
-                                                    <img class="c-card__image" width="447" height="235" src="<%= path['img:top'] %>top-works-02-895x469.jpg" sizes="(min-width: 2280px) 864px, (min-width: 1080px) calc(36.44vw + 40px), (min-width: 340px) 89.31vw, 268px" srcset="<%= path['img:top'] %>top-works-02-447x235.jpg 447w, <%= path['img:top'] %>top-works-02-596x313.jpg 596w, <%= path['img:top'] %>top-works-02-895x469.jpg 895w, <%= path['img:top'] %>top-works-02-1789x938.jpg 1789w" alt="株式会社園崎組のウェブサイトのトップページのスクリーンショット" decoding="async" loading="lazy" />
+                                                    <source type="image/webp" sizes="(min-width: 2280px) 864px, (min-width: 1080px) calc(36.44vw + 40px), (min-width: 340px) 89.31vw, 268px" srcset="<%= meta.path['img:top'] %>top-works-02-447x235.webp 447w, <%= meta.path['img:top'] %>top-works-02-596x313.webp 596w, <%= meta.path['img:top'] %>top-works-02-895x469.webp 895w, <%= meta.path['img:top'] %>top-works-02-1789x938.webp 1789w" />
+                                                    <img class="c-card__image" width="447" height="235" src="<%= meta.path['img:top'] %>top-works-02-895x469.jpg" sizes="(min-width: 2280px) 864px, (min-width: 1080px) calc(36.44vw + 40px), (min-width: 340px) 89.31vw, 268px" srcset="<%= meta.path['img:top'] %>top-works-02-447x235.jpg 447w, <%= meta.path['img:top'] %>top-works-02-596x313.jpg 596w, <%= meta.path['img:top'] %>top-works-02-895x469.jpg 895w, <%= meta.path['img:top'] %>top-works-02-1789x938.jpg 1789w" alt="株式会社園崎組のウェブサイトのトップページのスクリーンショット" decoding="async" loading="lazy" />
                                                 </picture>
                                             </a>
                                         </div>

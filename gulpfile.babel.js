@@ -7,6 +7,8 @@ import gulpSass from 'gulp-sass';
 import postcss from 'gulp-postcss';
 import cleanCss from 'gulp-clean-css';
 import stylelint from '@ronilaukkarinen/gulp-stylelint';
+import jsonSass from 'gulp-json-sass-vars';
+import concat from 'gulp-concat';
 import gulpif from 'gulp-if';
 import sourcemaps from 'gulp-sourcemaps';
 import imagemin from 'gulp-imagemin';
@@ -44,7 +46,7 @@ const paths = {
         dest: 'dist/assets/js',
     },
     json: {
-        src: 'src/ejs/meta/meta.json',
+        dest: 'src/assets/scss/abstracts/variables',
     },
     images: {
         src: ['src/assets/img/**/*.{jpg,jpeg,png,svg,gif,webp}', '!src/assets/img/favicon/**/*'],
@@ -98,16 +100,22 @@ export const watch = () => {
 
 // clean
 export const clean = (done) => {
-    del(['dist', 'packaged']);
+    del(['dist/**', 'packaged']);
     done();
 };
 
 // html
 export const html = () => {
-    const json = JSON.parse(fs.readFileSync(paths.json.src));
+    const jsonMeta = JSON.parse(fs.readFileSync('meta.json'));
+    const jsonBreakpoints = JSON.parse(fs.readFileSync('breakpoints.json'));
     return gulp
         .src(paths.ejs.src)
-        .pipe(ejs(json))
+        .pipe(
+            ejs({
+                meta: jsonMeta,
+                bareakpoints: jsonBreakpoints,
+            }),
+        )
         .pipe(
             rename({
                 extname: '.html',
@@ -116,6 +124,11 @@ export const html = () => {
         .pipe(prettier())
         .pipe(gulp.dest(paths.ejs.dest))
         .pipe(server.stream());
+};
+
+// json
+export const json = () => {
+    return gulp.src('breakpoints.json').pipe(jsonSass()).pipe(concat('_breakpoints.scss')).pipe(gulp.dest(paths.json.dest));
 };
 
 // styles
@@ -245,7 +258,7 @@ export const cacheBusting = () => {
                     var ext = path.extname(file.path);
                     return path.basename(file.path, ext) + '-' + hash.substr(0, 8) + ext;
                 },
-                prefix: !PRODUCTION ? '' : 'https://shogo-log3.coding11ty.com/',
+                prefix: !PRODUCTION ? '' : info.homepage,
                 dontRenameFile: ['.html'],
                 dontUpdateReference: ['.html'],
                 includeFilesInManifest: ['.css', '.webp', '.jpg', '.svg', '.png'],
@@ -256,8 +269,8 @@ export const cacheBusting = () => {
 };
 
 // dev, build, bundle
-export const dev = gulp.series(clean, gulp.parallel(styles, scripts), html, images, favicon, copy, serve, watch);
-export const build = gulp.series(clean, gulp.parallel(styles, scripts), html, images, favicon, copy, cacheBusting);
+export const dev = gulp.series(clean, json, gulp.parallel(html, styles, scripts), images, favicon, copy, serve, watch);
+export const build = gulp.series(clean, json, gulp.parallel(html, styles, scripts), images, favicon, copy, cacheBusting);
 export const bundle = gulp.series(build, compress);
 
 // default
