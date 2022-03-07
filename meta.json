@@ -10,7 +10,7 @@
         "img:error": "/assets/img/error/"
     },
     "common": {
-        "siteName": "your-coding",
+        "site_name": "your-coding",
         "og:site_name": "your-coding",
         "og:locale": "ja_JP",
         "og:locale:alternate": "en_US",
