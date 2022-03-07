@@ -23,7 +23,7 @@
         "@babel/core": "7.17.5",
         "@babel/preset-env": "7.16.11",
         "@babel/register": "7.17.0",
-        "@googlemaps/js-api-loader": "1.13.7",
+        "@googlemaps/js-api-loader": "1.13.8",
         "@linthtml/gulp-linthtml": "0.7.0",
         "@linthtml/linthtml": "0.8.4",
         "@linthtml/linthtml-config-recommended": "0.1.0",
