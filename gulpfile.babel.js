@@ -98,7 +98,7 @@ export const watch = () => {
 
 // clean
 export const clean = (done) => {
-    del(['dist', 'packaged']);
+    del(['dist/**', 'packaged']);
     done();
 };
 
@@ -256,8 +256,8 @@ export const cacheBusting = () => {
 };
 
 // dev, build, bundle
-export const dev = gulp.series(clean, gulp.parallel(styles, scripts), html, images, favicon, copy, serve, watch);
-export const build = gulp.series(clean, gulp.parallel(styles, scripts), html, images, favicon, copy, cacheBusting);
+export const dev = gulp.series(clean, gulp.parallel(html, styles, scripts), images, favicon, copy, serve, watch);
+export const build = gulp.series(clean, gulp.parallel(html, styles, scripts), images, favicon, copy, cacheBusting);
 export const bundle = gulp.series(build, compress);
 
 // default
