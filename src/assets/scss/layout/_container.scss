@@ -48,7 +48,7 @@
   padding-right: fs-rem(20px);
   padding-left: fs-rem(20px);
 
-  @include mq($from: headerMenu) {
+  @include mq($from: laptop) {
     padding-right: fs-rem(30px);
     padding-left: fs-rem(30px);
   }

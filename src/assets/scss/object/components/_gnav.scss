@@ -6,7 +6,7 @@
 @use 'sass:math' as *;
 
 /* mobile menu layout */
-@include mq($until: headerMenu) {
+@include mq($until: laptop) {
   /* overview */
   .c-gnav {
     position: fixed;
@@ -53,7 +53,7 @@
 }
 
 /* desktop menu layout */
-@include mq($from: headerMenu) {
+@include mq($from: laptop) {
   /* overview */
   .c-gnav {
     height: 100%;
