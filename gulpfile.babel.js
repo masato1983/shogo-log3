@@ -46,7 +46,6 @@ const paths = {
         dest: 'dist/assets/js',
     },
     json: {
-        src: 'src/ejs/meta/meta.json',
         dest: 'src/assets/scss/abstracts/variables',
     },
     images: {
@@ -107,10 +106,16 @@ export const clean = (done) => {
 
 // html
 export const html = () => {
-    const json = JSON.parse(fs.readFileSync(paths.json.src));
+    const jsonMeta = JSON.parse(fs.readFileSync('meta.json'));
+    const jsonBreakpoints = JSON.parse(fs.readFileSync('breakpoints.json'));
     return gulp
         .src(paths.ejs.src)
-        .pipe(ejs(json))
+        .pipe(
+            ejs({
+                meta: jsonMeta,
+                bareakpoints: jsonBreakpoints,
+            }),
+        )
         .pipe(
             rename({
                 extname: '.html',
@@ -123,7 +128,7 @@ export const html = () => {
 
 // json
 export const json = () => {
-    return gulp.src(paths.json.src).pipe(jsonSass()).pipe(concat('_meta.scss')).pipe(gulp.dest(paths.json.dest));
+    return gulp.src('breakpoints.json').pipe(jsonSass()).pipe(concat('_breakpoints.scss')).pipe(gulp.dest(paths.json.dest));
 };
 
 // styles
