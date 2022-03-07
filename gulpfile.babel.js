@@ -7,6 +7,8 @@ import gulpSass from 'gulp-sass';
 import postcss from 'gulp-postcss';
 import cleanCss from 'gulp-clean-css';
 import stylelint from '@ronilaukkarinen/gulp-stylelint';
+import jsonSass from 'gulp-json-sass-vars';
+import concat from 'gulp-concat';
 import gulpif from 'gulp-if';
 import sourcemaps from 'gulp-sourcemaps';
 import imagemin from 'gulp-imagemin';
@@ -45,6 +47,7 @@ const paths = {
     },
     json: {
         src: 'src/ejs/meta/meta.json',
+        dest: 'src/assets/scss/abstracts/variables',
     },
     images: {
         src: ['src/assets/img/**/*.{jpg,jpeg,png,svg,gif,webp}', '!src/assets/img/favicon/**/*'],
@@ -116,6 +119,11 @@ export const html = () => {
         .pipe(prettier())
         .pipe(gulp.dest(paths.ejs.dest))
         .pipe(server.stream());
+};
+
+// json
+export const json = () => {
+    return gulp.src(paths.json.src).pipe(jsonSass()).pipe(concat('_meta.scss')).pipe(gulp.dest(paths.json.dest));
 };
 
 // styles
@@ -245,7 +253,7 @@ export const cacheBusting = () => {
                     var ext = path.extname(file.path);
                     return path.basename(file.path, ext) + '-' + hash.substr(0, 8) + ext;
                 },
-                prefix: !PRODUCTION ? '' : 'https://shogo-log3.coding11ty.com/',
+                prefix: !PRODUCTION ? '' : info.homepage,
                 dontRenameFile: ['.html'],
                 dontUpdateReference: ['.html'],
                 includeFilesInManifest: ['.css', '.webp', '.jpg', '.svg', '.png'],
