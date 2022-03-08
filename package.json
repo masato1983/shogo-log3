@@ -4,9 +4,9 @@
     "description": "coding practice",
     "main": "index.js",
     "scripts": {
-        "start": "gulp",
-        "build": "gulp build --prod",
-        "bundle": "gulp bundle --prod"
+        "start": "cross-env NODE_ENV=development gulp",
+        "build": "cross-env NODE_ENV=production gulp build --prod",
+        "bundle": "cross-env NODE_ENV=production gulp bundle --prod"
     },
     "repository": {
         "type": "git",
