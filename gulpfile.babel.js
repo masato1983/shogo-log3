@@ -107,12 +107,14 @@ export const clean = (done) => {
 // html
 export const html = () => {
     const jsonMeta = JSON.parse(fs.readFileSync('meta.json'));
+    const jsonPackage = JSON.parse(fs.readFileSync('package.json'));
     const jsonBreakpoints = JSON.parse(fs.readFileSync('breakpoints.json'));
     return gulp
         .src(paths.ejs.src)
         .pipe(
             ejs({
                 meta: jsonMeta,
+                package: jsonPackage,
                 bareakpoints: jsonBreakpoints,
             }),
         )
