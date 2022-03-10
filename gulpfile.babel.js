@@ -106,13 +106,15 @@ export const clean = (done) => {
 
 // html
 export const html = () => {
-    const jsonMeta = JSON.parse(fs.readFileSync('meta.json'));
-    const jsonBreakpoints = JSON.parse(fs.readFileSync('breakpoints.json'));
+    const jsonMeta = JSON.parse(fs.readFileSync('src/json/meta.json'));
+    const jsonPackage = JSON.parse(fs.readFileSync('package.json'));
+    const jsonBreakpoints = JSON.parse(fs.readFileSync('src/json/breakpoints.json'));
     return gulp
         .src(paths.ejs.src)
         .pipe(
             ejs({
                 meta: jsonMeta,
+                package: jsonPackage,
                 bareakpoints: jsonBreakpoints,
             }),
         )
@@ -128,7 +130,7 @@ export const html = () => {
 
 // json
 export const json = () => {
-    return gulp.src('breakpoints.json').pipe(jsonSass()).pipe(concat('_breakpoints.scss')).pipe(gulp.dest(paths.json.dest));
+    return gulp.src('src/json/breakpoints.json').pipe(jsonSass()).pipe(concat('_breakpoints.scss')).pipe(gulp.dest(paths.json.dest));
 };
 
 // styles

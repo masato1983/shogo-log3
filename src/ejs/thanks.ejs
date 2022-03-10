@@ -2,14 +2,16 @@
 <html lang="ja">
     <%- include('./_include/_head', {page: meta.thanks}); %>
     <body>
+        <!-- header -->
         <%- include('./_include/_header', { page: 'thanks' }); %>
-        <main>
-            <div class="p-thanks">
-                <div class="p-thanks__main">
-                    <p class="p-thanks__description c-text--wider">送信が完了しました</p>
-                    <p class="p-thanks__description c-text__xl c-text--bold c-text--wide"><span class="u-break-sp-only">お問い合わせ頂き</span><span class="u-break-sp-only">ありがとうございました</span></p>
-                </div>
-            </div>
-        </main>
+        <!-- end header -->
+
+        <!-- main -->
+        <main class="l-main"></main>
+        <!-- end main -->
+
+        <!-- footer -->
+        <%- include('./_include/_footer') %>
+        <!-- end footer -->
     </body>
 </html>

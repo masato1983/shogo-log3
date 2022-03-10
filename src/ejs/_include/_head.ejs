@@ -21,20 +21,20 @@
     <meta property="og:title" content="<%= page['title'] %> | <%= meta.common['site_name'] %>" />
     <meta property="og:type" content="<%= page['og:type'] %>" />
     <meta property="og:url" content="<%= page['og:url'] %>" />
-    <meta property="og:image" content="<%= meta.path['img:ogp'] %><%= page['og:image'] %>" />
-    <meta property="og:image:secure_url" content="<%= meta.path['img:ogp'] %><%= page['og:image:secure_url'] %>" />
-    <meta property="og:image:type" content="<%= page['og:image:type'] %>" />
-    <meta property="og:image:width" content="<%= page['og:image:width'] %>" />
-    <meta property="og:image:height" content="<%= page['og:image:height'] %>" />
-    <meta property="og:image:alt" content="<%= page['og:image:alt'] %>" />
+    <meta property="og:image" content="<%= meta.path['img:ogp'] %><%= meta.common['og:image'] %>" />
+    <meta property="og:image:secure_url" content="<%= meta.path['img:ogp'] %><%= meta.common['og:image:secure_url'] %>" />
+    <meta property="og:image:type" content="<%= meta.common['og:image:type'] %>" />
+    <meta property="og:image:width" content="<%= meta.common['og:image:width'] %>" />
+    <meta property="og:image:height" content="<%= meta.common['og:image:height'] %>" />
+    <meta property="og:image:alt" content="<%= meta.common['og:image:alt'] %>" />
     <meta property="og:description" content="<%= page['og:description'] %>" />
     <meta property="og:site_name" content="<%= meta.common['og:site_name'] %>" />
 
     <!-- twitter card -->
     <meta name="twitter:card" content="<%= meta.common['twitter:card']  %>" />
     <meta name="twitter:site" content="<%= meta.common['twitter:site']  %>" />
-    <meta name="twitter:image" content="<%= meta.path['img:ogp'] %><%= page['twitter:image']  %>" />
-    <meta name="twitter:image:alt" content="<%= page['twitter:image:alt']  %>" />
+    <meta name="twitter:image" content="<%= meta.path['img:ogp'] %><%= meta.common['twitter:image']  %>" />
+    <meta name="twitter:image:alt" content="<%= meta.common['twitter:image:alt']  %>" />
     <meta name="twitter:creator" content="<%= meta.common['twitter:creator'] %>" />
 
     <!-- facebook -->
@@ -48,7 +48,7 @@
 
     <!-- canonical -->
     <% if(process.env.NODE_ENV === 'production') { %>
-    <link rel="canonical" href="https://portfolio.coding11ty.com" />
+    <link rel="canonical" href="<%= package.homepage %>" />
     <% } %>
 
     <!-- google fonts -->

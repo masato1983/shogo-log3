@@ -2,15 +2,16 @@
 <html lang="ja">
     <%- include('./_include/_head', {page: meta.error}); %>
     <body>
+        <!-- header -->
         <%- include('./_include/_header', { page: 'error' }); %>
-        <main>
-            <div class="p-error">
-                <div class="p-error__main">
-                    <p class="p-error__description c-text__2xl c-text--bold c-text--wide">404</p>
-                    <p class="p-error__description c-text__2xl c-text--bold c-text--wide">File Not Found</p>
-                    <p class="p-error__description c-text__md"><span class="u-break-sp-only">アクセスしようとした</span><span class="u-break-sp-only">ページは見つかりませんでした</span></p>
-                </div>
-            </div>
-        </main>
+        <!-- end header -->
+
+        <!-- main -->
+        <main class="l-main"></main>
+        <!-- end main -->
+
+        <!-- footer -->
+        <%- include('./_include/_footer') %>
+        <!-- end footer -->
     </body>
 </html>

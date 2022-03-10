@@ -14,9 +14,17 @@
         "og:site_name": "your-coding",
         "og:locale": "ja_JP",
         "og:locale:alternate": "en_US",
+        "og:image": "ogp-1200x630.jpg",
+        "og:image:secure_url": "ogp-1200x630.jpg",
+        "og:image:alt": "",
+        "og:image:type": "image/jpeg",
+        "og:image:width": "1200",
+        "og:image:height": "630",
         "twitter:card": "summary_large_image",
         "twitter:site": "",
         "twitter:creator": "",
+        "twitter:image": "ogp-1200x630.jpg",
+        "twitter:image:alt": "",
         "fb:app_id": ""
     },
     "top": {
@@ -26,15 +34,7 @@
         "keywords": "",
         "og:type": "website",
         "og:url": "https://shogo-log3..coding11ty.com",
-        "og:image": "ogp-1200x630.jpg",
-        "og:image:secure_url": "ogp-1200x630.jpg",
-        "og:image:alt": "",
-        "og:image:type": "image/jpeg",
-        "og:image:width": "1200",
-        "og:image:height": "630",
-        "og:description": "coding-practice",
-        "twitter:image": "ogp-1200x630.jpg",
-        "twitter:image:alt": ""
+        "og:description": "coding-practice"
     },
     "error": {
         "prefix": "og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# article: https://ogp.me/ns/article#",
@@ -43,15 +43,7 @@
         "keywords": "",
         "og:type": "article",
         "og:url": "https://shogo-log3.coding11ty.com/error.html",
-        "og:image": "ogp-1200x630.jpg",
-        "og:image:secure_url": "ogp-1200x630.jpg",
-        "og:image:alt": "",
-        "og:image:type": "image/jpeg",
-        "og:image:width": "1200",
-        "og:image:height": "630",
-        "og:description": "アクセスしようとしたページは見つかりませんでした。",
-        "twitter:image": "ogp-1200x630.jpg",
-        "twitter:image:alt": ""
+        "og:description": "アクセスしようとしたページは見つかりませんでした。"
     },
     "thanks": {
         "prefix": "og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# article: https://ogp.me/ns/article#",
@@ -60,14 +52,6 @@
         "keywords": "",
         "og:type": "article",
         "og:url": "https://shogo-log3.coding11ty.com/404.html",
-        "og:image": "ogp-1200x630.jpg",
-        "og:image:secure_url": "ogp-1200x630.jpg",
-        "og:image:alt": "",
-        "og:image:type": "image/jpeg",
-        "og:image:width": "1200",
-        "og:image:height": "630",
-        "og:description": "送信が完了いたしました。",
-        "twitter:image": "ogp-1200x630.jpg",
-        "twitter:image:alt": ""
+        "og:description": "送信が完了いたしました。"
     }
 }

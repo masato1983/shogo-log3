@@ -6,11 +6,11 @@ import 'core-js/modules/es.object.assign';
 import 'core-js/modules/es.number.is-nan';
 import 'core-js/modules/es.string.repeat';
 import 'core-js/modules/es.promise';
-import info from '/breakpoints.json';
+import info from '../../json/breakpoints.json';
 
-const mobile = info.breakpoints.mobile;
-const desktop = info.breakpoints.desktop;
-const wide = info.breakpoints.wide;
+const mobile = info.breakpoint.mobile;
+const desktop = info.breakpoint.desktop;
+const wide = info.breakpoint.wide;
 
 // circle text
 // import CircleType from 'circletype';

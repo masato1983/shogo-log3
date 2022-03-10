@@ -18,12 +18,6 @@ footer {
 
 body {
   overflow-x: hidden; // Workaround side-scrolling problem caused by full-bleed.
-  color: var(--color-neutral-extra-lighter);
-  font-weight: var(--font-weight-normal);
-  font-size: var(--font-size-sm);
-  font-family: var(--font-family-primary);
-  line-height: var(--line-height-loose);
-  letter-spacing: var(--letter-spacing-wide);
   hyphens: auto;
   background-color: var(--color-neutral-darken);
   hanging-punctuation: allow-end;
@@ -33,18 +27,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-break: loose;
   text-rendering: geometricPrecision;
-
-  @include mq($from: tablet) {
-    font-size: calc((var(--font-size-sm) + var(--font-size-md)) / 2);
-  }
-
-  @include mq($from: desktop) {
-    font-size: var(--font-size-md);
-  }
-
-  @include mq($from: wide) {
-    font-size: var(--font-size-lg);
-  }
 }
 
 main {

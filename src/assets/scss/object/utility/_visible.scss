@@ -4,54 +4,65 @@
 
 @use '../../abstracts/' as *;
 
-/* mobile & landscape */
-.u-visible-sp {
-  @include mq($from: tablet) {
+/* block */
+@each $name, $value in $breakpoint {
+  .u-visible__block--from-#{$name} {
     display: none;
+
+    @include mq($from: #{$name}) {
+      display: block;
+    }
   }
 }
 
-/* tablet */
-.u-visible-tablet {
-  display: none;
+@each $name, $value in $breakpoint {
+  .u-visible__block--until-#{$name} {
+    display: block;
 
-  @include mq($from: tablet) {
-    display: inline;
+    @include mq($until: #{$name}) {
+      display: none;
+    }
   }
 }
 
-/* tablet only */
-.u-visible-tablet-only {
-  display: none;
-
-  @include mq($from: tablet, $until: desktop) {
-    display: inline;
-  }
-}
-
-/* until desktop */
-.u-visible-until-desktop {
-  display: inline;
-
-  @include mq($from: desktop) {
+/* inline-block */
+@each $name, $value in $breakpoint {
+  .u-visible__inline-block--from-#{$name} {
     display: none;
+
+    @include mq($from: #{$name}) {
+      display: inline-block;
+    }
   }
 }
 
-/* desktop */
-.u-visible-desktop {
-  display: none;
+@each $name, $value in $breakpoint {
+  .u-visible__inline-block--until-#{$name} {
+    display: inline-block;
 
-  @include mq($from: tablet) {
-    display: inline;
+    @include mq($until: #{$name}) {
+      display: none;
+    }
   }
 }
 
-/* wide */
-.u-visible-wide {
-  display: none;
+/* inline */
+@each $name, $value in $breakpoint {
+  .u-visible__inline--from-#{$name} {
+    display: none;
 
-  @include mq($from: wide) {
+    @include mq($from: #{$name}) {
+      display: inline;
+    }
+  }
+}
+
+@each $name, $value in $breakpoint {
+  .u-visible__inline--until-#{$name} {
     display: inline;
+
+    @include mq($until: #{$name}) {
+      display: none;
+    }
   }
 }

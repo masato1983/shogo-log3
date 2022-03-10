@@ -10,39 +10,25 @@
 // https://css-tricks.com/full-width-containers-limited-width-parents/#article-header-id-6
 
 /* all */
-.u-full-bleed-all {
+.u-full-bleed {
   width: 100vw;
   margin-left: calc(50% - 50vw);
 }
 
-/* only mobile */
-.u-full-bleed-mobile {
-  @include mq($until: tablet) {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
+@each $name, $value in $breakpoint {
+  .u-full-bleed--from-#{$name} {
+    @include mq($from: #{$name}) {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+    }
   }
 }
 
-/* over tablet */
-.u-full-bleed-tablet {
-  @include mq($from: tablet) {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-  }
-}
-
-/* over desktop */
-.u-full-bleed-desktop {
-  @include mq($from: desktop) {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-  }
-}
-
-/* over wide */
-.u-full-bleed-wide {
-  @include mq($from: desktop) {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
+@each $name, $value in $breakpoint {
+  .u-full-bleed--lower-#{$name} {
+    @include mq($until: #{$name}) {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+    }
   }
 }

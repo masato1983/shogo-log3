@@ -1,0 +1,11 @@
+{
+    "breakpoint": {
+        "mobile": "360px",
+        "landscape": "540px",
+        "tablet": "768px",
+        "laptop": "900px",
+        "desktop": "1080px",
+        "wide": "1440px",
+        "full": "1600px"
+    }
+}
