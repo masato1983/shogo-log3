@@ -6,7 +6,7 @@ import 'core-js/modules/es.object.assign';
 import 'core-js/modules/es.number.is-nan';
 import 'core-js/modules/es.string.repeat';
 import 'core-js/modules/es.promise';
-import info from '/breakpoints.json';
+import info from '../../json/breakpoints.json';
 
 const mobile = info.breakpoint.mobile;
 const desktop = info.breakpoint.desktop;

@@ -2,10 +2,10 @@
     "breakpoint": {
         "mobile": "360px",
         "landscape": "540px",
-        "tablet": "724px",
-        "laptop": "840px",
+        "tablet": "768px",
+        "laptop": "900px",
         "desktop": "1080px",
-        "wide": "1300px",
-        "full": "1920px"
+        "wide": "1440px",
+        "full": "1600px"
     }
 }

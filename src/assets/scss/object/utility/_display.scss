@@ -9,14 +9,47 @@
   display: inline;
 }
 
+@each $name, $value in $breakpoint {
+  .u-display__inline--#{$name} {
+    @include mq($from: #{$name}) {
+      display: inline;
+    }
+  }
+}
+
+/* inline-block */
+.u-display__inline-block {
+  display: inline-block;
+}
+
+@each $name, $value in $breakpoint {
+  .u-display__inline-block--#{$name} {
+    @include mq($from: #{$name}) {
+      display: inline-block;
+    }
+  }
+}
+
 /* block */
 .u-display__block {
   display: block;
 }
 
-/* block (sp) */
-.u-display__block--sp {
-  @include mq($from: tablet) {
-    display: inline;
+@each $name, $value in $breakpoint {
+  .u-display__block--#{$name} {
+    @include mq($from: #{$name}) {
+      display: block;
+    }
+  }
+}
+
+/* break */
+@each $name, $value in $breakpoint {
+  .u-display__break--#{$name} {
+    display: block;
+
+    @include mq($from: #{$name}) {
+      display: inline;
+    }
   }
 }

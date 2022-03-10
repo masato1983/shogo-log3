@@ -21,13 +21,22 @@ Text component
   font-family: var(--font-family-en-sans);
 }
 
+.c-text__family--en-condensed {
+  font-family: var(--font-family-en-condensed);
+}
+
 .c-text__family--en-serif {
   font-family: var(--font-family-en-serif);
+}
+
+.c-text__family--en-mono {
+  font-family: var(--font-family-en-mono);
 }
 
 // ==========================================================================
 // font-size(step)
 // ==========================================================================
+
 .c-text__size--xs {
   font-size: fs-rem(13px);
 
@@ -304,6 +313,14 @@ Text component
 
 .c-text__lh--extra-loose {
   line-height: var(--line-height-extra-loose);
+}
+
+// ==========================================================================
+// feature
+// ==========================================================================
+
+.c-text__feature--palt {
+  font-feature-settings: 'palt';
 }
 
 // ==========================================================================
