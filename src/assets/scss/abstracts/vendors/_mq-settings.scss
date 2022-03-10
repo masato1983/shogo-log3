@@ -1,23 +1,23 @@
 @use '../variables/breakpoints' as *;
 @use 'sass:map';
 
-$breakpoints: (
-    mobile: map.get($breakpoints, 'mobile'),
-    landscape: map.get($breakpoints, 'landscape'),
-    tablet: map.get($breakpoints, 'tablet'),
-    laptop: map.get($breakpoints, 'laptop'),
-    desktop: map.get($breakpoints, 'desktop'),
-    wide: map.get($breakpoints, 'wide'),
-    full: map.get($breakpoints, 'full'),
+$mq_breakpoints: (
+    mobile: map.get($breakpoint, 'mobile'),
+    landscape: map.get($breakpoint, 'landscape'),
+    tablet: map.get($breakpoint, 'tablet'),
+    laptop: map.get($breakpoint, 'laptop'),
+    desktop: map.get($breakpoint, 'desktop'),
+    wide: map.get($breakpoint, 'wide'),
+    full: map.get($breakpoint, 'full'),
 );
 
-$media-type: 'all';
+$mq_media-type: 'all';
 
 // $show-breakpoints: (mobile, landscape, tablet, desktop, wide, full);
-$show-breakpoints: ();
+$mq_show-breakpoints: ();
 
 @forward './mq'  with (
-  $breakpoints: $breakpoints,
-  $media-type: $media-type,
-  $show-breakpoints: $show-breakpoints,
+  $breakpoints: $mq_breakpoints,
+  $media-type: $mq_media-type,
+  $show-breakpoints: $mq_show-breakpoints,
 );

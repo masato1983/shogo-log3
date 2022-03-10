@@ -1,168 +1,337 @@
 /* ==========================================================================
-   Text component
-   ========================================================================== */
+Text component
+========================================================================== */
 
 @use '../../abstracts/' as *;
 @use 'sass:math' as *;
 
 // ==========================================================================
-// Common modifier
+// font-family
 // ==========================================================================
 
-/* color modifier */
-.c-text--primary {
-  color: var(--color-primary-mid);
+.c-text__family--ja-sans {
+  font-family: var(--font-family-ja-sans);
 }
 
-.c-text--secondary {
-  color: var(--color-secondary-mid);
+.c-text__family--ja-serif {
+  font-family: var(--font-family-ja-serif);
 }
 
-.c-text--white {
-  color: var(--color-neutral-extra-lighter);
+.c-text__family--en-sans {
+  font-family: var(--font-family-en-sans);
 }
 
-.c-text--darker {
-  color: var(--color-neutral-darker);
+.c-text__family--en-serif {
+  font-family: var(--font-family-en-serif);
 }
 
-.c-text--mid {
-  color: var(--color-neutral-mid);
-}
+// ==========================================================================
+// font-size(step)
+// ==========================================================================
+.c-text__size--xs {
+  font-size: fs-rem(13px);
 
-.c-text--extra-mid {
-  color: var(--color-neutral-extra-mid);
-}
-
-.c-text--low-lighter {
-  color: var(--color-neutral-low-lighter);
-}
-
-.c-text--lighter {
-  color: var(--color-neutral-lighter);
-}
-
-.c-text--link {
-  display: inline-block;
-  color: var(--color-link);
-}
-
-// https://css-tricks.com/4-ways-to-animate-the-color-of-a-text-link-on-hover/#aa-technique-1-using-background-clip-text
-.c-text--link-animation {
-  position: relative;
-  overflow: hidden;
-  color: transparent;
-  vertical-align: bottom;
-  background: linear-gradient(to right, var(--color-link-hover), var(--color-link-hover) 50%, var(--color-link) 50%);
-  background-position: 100%;
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: background-position 0.3s var(--ease-in-out-cubic);
-
-  @include hover {
-    background-position: 0 100%;
+  @include mq($from: tablet) {
+    font-size: fs-rem(14px);
   }
 }
 
-/* link on hover */
-// https://css-tricks.com/4-ways-to-animate-the-color-of-a-text-link-on-hover/#aa-technique-3-using-clip-path
-.c-text--link-on-hover {
-  position: relative;
-  overflow: hidden;
-  color: var(--color-link);
-  vertical-align: bottom;
-  transition: clip-path 0.3s var(--ease-in-out-cubic);
+.c-text__size--md {
+  font-size: fs-rem(14px);
 
-  @include hover-before-pseudo-element {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  @include mq($from: tablet) {
+    font-size: fs-rem(15px);
   }
 }
 
-.c-text--link-on-hover::before {
-  position: absolute;
-  color: var(--color-link-hover);
-  text-decoration: underline;
-  transition: clip-path 0.3s var(--ease-in-out-cubic);
-  content: attr(data-content);
-  clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
-  text-decoration-color: var(--color-link-hover);
+.c-text__size--lg {
+  font-size: fs-rem(14px);
+
+  @include mq($from: tablet) {
+    font-size: fs-rem(15px);
+  }
+
+  @include mq($from: wide) {
+    font-size: fs-rem(16px);
+  }
 }
 
-.c-text--warning {
+.c-text__size--xl {
+  font-size: fs-rem(20px);
+
+  @include mq($from: tablet) {
+    font-size: fs-rem(21px);
+  }
+
+  @include mq($from: laptop) {
+    font-size: fs-rem(22px);
+  }
+
+  @include mq($from: desktop) {
+    font-size: fs-rem(23px);
+  }
+
+  @include mq($from: wide) {
+    font-size: fs-rem(24px);
+  }
+}
+
+.c-text__size--2xl {
+  font-size: fs-rem(24px);
+
+  @include mq($from: tablet) {
+    font-size: fs-rem(25px);
+  }
+
+  @include mq($from: laptop) {
+    font-size: fs-rem(26px);
+  }
+
+  @include mq($from: desktop) {
+    font-size: fs-rem(27px);
+  }
+
+  @include mq($from: wide) {
+    font-size: fs-rem(28px);
+  }
+}
+
+.c-text__size--3xl {
+  font-size: fs-rem(28px);
+
+  @include mq($from: tablet) {
+    font-size: fs-rem(29px);
+  }
+
+  @include mq($from: laptop) {
+    font-size: fs-rem(30px);
+  }
+
+  @include mq($from: desktop) {
+    font-size: fs-rem(31px);
+  }
+
+  @include mq($from: wide) {
+    font-size: fs-rem(32px);
+  }
+}
+
+// ==========================================================================
+// font-size(fluid)
+// ==========================================================================
+
+.c-text__fluid--xs {
+  @include fs-scale(font-size, ($breakpoint-mobile: 13px, $breakpoint-wide: 14px));
+}
+
+.c-text__fluid--sm {
+  @include fs-scale(font-size, ($breakpoint-mobile: 14px, $breakpoint-wide: 15px));
+}
+
+.c-text__fluid--md {
+  @include fs-scale(font-size, ($breakpoint-mobile: 14px, $breakpoint-wide: 16px));
+}
+
+.c-text__fluid--lg {
+  @include fs-scale(font-size, ($breakpoint-mobile: 16px, $breakpoint-wide: 18px));
+}
+
+.c-text__fluid--xl {
+  @include fs-scale(font-size, ($breakpoint-mobile: 20px, $breakpoint-wide: 24px));
+}
+
+.c-text__fluid--2xl {
+  @include fs-scale(font-size, ($breakpoint-mobile: 24px, $breakpoint-wide: 28px));
+}
+
+.c-text__fluid--3xl {
+  @include fs-scale(font-size, ($breakpoint-mobile: 28px, $breakpoint-wide: 32px));
+}
+
+// ==========================================================================
+// 3a_color
+// ==========================================================================
+
+.c-text__color--primary {
+  color: var(--color-neutral-primary);
+}
+
+.c-text__color--secondary {
+  color: var(--color-neutral-secondary);
+}
+
+.c-text__color--black {
+  color: var(--color-black);
+}
+
+.c-text__color--white {
+  color: var(--color-white);
+}
+
+.c-text__color--warning {
   color: var(--color-warning);
 }
 
-/* weight modifier */
-.c-text--medium {
+.c-text__color--accent {
+  color: var(--color-accent);
+}
+
+.c-text__color--link {
+  color: var(--color-link);
+}
+
+// ==========================================================================
+// color(neutral)
+// ==========================================================================
+
+.c-text__color--neutral-darken {
+  color: var(--color-neutral-darken);
+}
+
+.c-text__color--neutral-darker {
+  color: var(--color-neutral-darker);
+}
+
+.c-text__color--neutral-mid {
+  color: var(--color-neutral-mid);
+}
+
+.c-text__color--neutral-lighter {
+  color: var(--color-neutral-lighter);
+}
+
+.c-text__color--neutral-lightest {
+  color: var(--color-neutral-lightest);
+}
+
+@for $i from 1 through 9 {
+  .c-text__color--neutral-#{$i * 100} {
+    color: var(--color-neutral-#{$i * 100});
+  }
+}
+
+// ==========================================================================
+// color(alpha)
+// ==========================================================================
+
+@for $i from 1 through 9 {
+  .c-text__color--black-alpha-#{$i * 100} {
+    color: var(--color-black-alpha-#{$i * 100});
+  }
+}
+
+@for $i from 1 through 9 {
+  .c-text__color--white-alpha-#{$i * 100} {
+    color: var(--color-white-alpha-#{$i * 100});
+  }
+}
+
+// ==========================================================================
+// font-wweight
+// ==========================================================================
+
+.c-text__weight--normal {
+  font-weight: var(--font-weight-normal);
+}
+
+.c-text__weight--medium {
   font-weight: var(--font-weight-medium);
 }
 
-.c-text--bold {
+.c-text__weight--semi-bold {
+  font-weight: var(--font-weight-semi-bold);
+}
+
+.c-text__weight--bold {
   font-weight: var(--font-weight-bold);
 }
 
-.c-text--black {
+.c-text__weight--black {
   font-weight: var(--font-weight-black);
 }
 
-/* line-height modifier */
-.c-text--extra-tight {
-  line-height: var(--line-height-tight);
+// ==========================================================================
+// letter-spacing
+// ==========================================================================
+
+.c-text__ls--narrow {
+  letter-spacing: var(--letter-spacing-narrow);
 }
 
-.c-text--snug {
-  line-height: var(--line-height-snug);
+.c-text__ls--normal {
+  letter-spacing: var(--letter-spacing-normal);
 }
 
-.c-text--normal {
-  line-height: var(--line-height-snug);
-}
-
-.c-text--relaxed {
-  line-height: var(--line-height-relaxed);
-}
-
-.c-text--loose {
-  line-height: var(--line-height-loose);
-}
-
-.c-text--extra-loose {
-  line-height: var(--line-height-extra-loose);
-}
-
-/* spacing modifier */
-.c-text--wide {
+.c-text__ls--wide {
   letter-spacing: var(--letter-spacing-wide);
 }
 
-.c-text--wider {
+.c-text__ls--wider {
   letter-spacing: var(--letter-spacing-wider);
 }
 
-.c-text--widest {
+.c-text__ls--widest {
   letter-spacing: var(--letter-spacing-widest);
 }
 
-/* shadow modifier */
-.c-text--shadow {
-  text-shadow: fs-rem(1px) fs-rem(1px) fs-rem(0) var(--color-neutral-lightest-alpha-middle);
+// ==========================================================================
+// line-height
+// ==========================================================================
+
+.c-text__lh--none {
+  line-height: var(--line-height-none);
 }
 
-/* underline modifier */
-.c-text--underline {
-  display: inline-block;
-  padding-right: fs-rem(1px);
-  padding-left: fs-rem(1px);
+.c-text__lh--tight {
+  line-height: var(--line-height-tight);
+}
+
+.c-text__lh--snug {
+  line-height: var(--line-height-snug);
+}
+
+.c-text__lh--normal {
+  line-height: var(--line-height-normal);
+}
+
+.c-text__lh--relaxed {
+  line-height: var(--line-height-relaxed);
+}
+
+.c-text__lh--loose {
+  line-height: var(--line-height-loose);
+}
+
+.c-text__lh--extra-loose {
+  line-height: var(--line-height-extra-loose);
+}
+
+// ==========================================================================
+// underline
+// ==========================================================================
+
+.c-text__underline--tech1 {
   text-decoration: underline;
-  text-decoration-color: var(--color-link);
-  text-decoration-thickness: fs-rem(1px);
-  text-underline-offset: fs-rem(3px);
 }
 
-/* outline modifier */
-.c-text--outline {
+.c-text__underline--tech2 {
+  display: inline-block;
+  background: linear-gradient(transparent 70%, var(--color-link) 70%);
+}
+
+// ==========================================================================
+// uppercase
+// ==========================================================================
+
+.c-text__uppercase {
+  text-transform: uppercase;
+}
+
+// ==========================================================================
+// outline
+// ==========================================================================
+
+.c-text__outline {
   color: var(--color-neutral-darken);
   text-shadow:
     1px 1px var(--color-neutral-extra-lighter),
@@ -175,16 +344,29 @@
     0 -1px var(--color-neutral-extra-lighter);
 }
 
-/* uppercase modifier */
-.c-text--uppercase {
-  text-transform: uppercase;
+// ==========================================================================
+// shadow
+// ==========================================================================
+
+.c-text__shadow {
+  text-shadow: fs-rem(1px) fs-rem(1px) fs-rem(0) var(--color-neutral-lightest-alpha-middle);
 }
 
-/* hover modifier */
-.c-text--hover {
+// ==========================================================================
+// writing
+// ==========================================================================
+
+.c-text__vertical {
+  writing-mode: vertical-rl;
+}
+
+// ==========================================================================
+// hover
+// ==========================================================================
+
+.c-text__hover {
   transition: color 0.3s var(--ease-in-out-cubic);
 
-  // prefer-reduced-motion
   @media screen and (prefers-reduced-motion: reduce) {
     transition: none;
   }
@@ -204,118 +386,46 @@
   }
 }
 
-/* font-family modifier */
-.c-text--english {
-  font-family: var(--font-family-secondary);
-}
-
-/* japanese vertical */
-.c-text--vertical {
-  writing-mode: vertical-rl;
-}
-
-/* japaneses vertical (tablet) */
-.c-text--vertical-tablet {
-  @include mq($from: tablet) {
-    writing-mode: vertical-rl;
-  }
-}
-
 // ==========================================================================
-// xs, sm, lg, xl, 2xl 3xl size
+// animation
 // ==========================================================================
 
-/* xs size */
-.c-text__xs {
-  font-size: var(--font-size-2xs);
+.c-text__animation--hover-tech1 { // https://css-tricks.com/4-ways-to-animate-the-color-of-a-text-link-on-hover/#aa-technique-1-using-background-clip-text
+  position: relative;
+  overflow: hidden;
+  color: transparent;
+  vertical-align: bottom;
+  background: linear-gradient(to right, var(--color-link-hover), var(--color-link-hover) 50%, var(--color-link) 50%);
+  background-position: 100%;
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 0.3s var(--ease-in-out-cubic);
 
-  @include mq($from: tablet) {
-    font-size: var(--font-size-xs);
+  @include hover {
+    background-position: 0 100%;
   }
 }
 
-/* sm size */
-.c-text__sm {
-  font-size: var(--font-size-xs);
+.c-text__animation__hover-tech2 { // https://css-tricks.com/4-ways-to-animate-the-color-of-a-text-link-on-hover/#aa-technique-3-using-clip-path
+  position: relative;
+  overflow: hidden;
+  color: var(--color-link);
+  vertical-align: bottom;
+  transition: clip-path 0.3s var(--ease-in-out-cubic);
 
-  @include mq($from: tablet) {
-    font-size: var(--font-size-sm);
-  }
-
-  @include mq($from: wide) {
-    font-size: var(--font-size-md);
-  }
-}
-
-/* lg size */
-.c-text__lg {
-  font-size: var(--font-size-lg);
-
-  @include mq($from: tablet) {
-    font-size: calc((var(--font-size-lg) + var(--font-size-2xl)) / 2);
-  }
-
-  @include mq($from: desktop) {
-    font-size: var(--font-size-2xl);
+  @include hover-before-pseudo-element {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 }
 
-/* xl size */
-.c-text__xl {
-  font-size: var(--font-size-xl);
-
-  @include mq($from: tablet) {
-    font-size: calc((var(--font-size-xl) + var(--font-size-4xl)) / 2);
-  }
-
-  @include mq($from: desktop) {
-    font-size: var(--font-size-4xl);
-  }
-}
-
-/* 2xl size */
-.c-text__2xl {
-  font-size: var(--font-size-3xl);
-
-  @include mq($from: tablet) {
-    font-size: calc((var(--font-size-xl) + var(--font-size-4xl)) / 2);
-  }
-
-  @include mq($from: desktop) {
-    font-size: var(--font-size-6xl);
-  }
-}
-
-/* 3xl size */
-.c-text__3xl {
-  font-size: var(--font-size-4xl);
-
-  @include mq($from: tablet) {
-    font-size: var(--font-size-6xl);
-  }
-
-  @include mq($from: desktop) {
-    font-size: var(--font-size-8xl);
-  }
-
-  @include mq($from: wide) {
-    font-size: var(--font-size-11xl);
-  }
-}
-
-/* 4xl size */
-.c-text__4xl {
-  font-size: var(--font-size-8xl);
-
-  @include mq($from: tablet) {
-    font-size: var(--font-size-9xl);
-  }
-
-  @include mq($from: desktop) {
-    font-size: var(--font-size-11xl);
-  }
-
-  @include mq($from: wide) {
-    font-size: var(--font-size-12xl);
-  }
+.c-text__animation__hover-tech2::before {
+  position: absolute;
+  color: var(--color-link-hover);
+  text-decoration: underline;
+  transition: clip-path 0.3s var(--ease-in-out-cubic);
+  content: attr(data-content);
+  clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
+  text-decoration-color: var(--color-link-hover);
 }

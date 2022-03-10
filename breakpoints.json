@@ -1,5 +1,5 @@
 {
-    "breakpoints": {
+    "breakpoint": {
         "mobile": "360px",
         "landscape": "540px",
         "tablet": "724px",

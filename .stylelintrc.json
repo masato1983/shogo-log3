@@ -32,6 +32,12 @@
         "value-keyword-case": null,
         "font-family-no-missing-generic-family-keyword": null,
         "order/properties-alphabetical-order": null,
-        "function-calc-no-unspaced-operator": null
+        "function-calc-no-unspaced-operator": null,
+        "function-no-unknown": [
+            true,
+            {
+                "ignoreFunctions": ["fs-rem"]
+            }
+        ]
     }
 }
