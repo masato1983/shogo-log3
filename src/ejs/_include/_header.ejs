@@ -1,0 +1,113 @@
+<header class="l-header">
+    <div class="l-container l-container__w--xl-md l-container__max-w--4xl">
+        <div class="l-header__inner" data-scroll-header>
+            <div class="l-header__logo">
+                <div class="c-logo">
+                    <a class="c-logo__link" href="<%= meta.path['root'] %>">
+                        <div class="c-logo__image-wrapper">
+                            <picture>
+                                <source type="image/webp" sizes="" srcset="<%= meta.path['img:common'] %>common-logo-47x47.webp 47w, <%= meta.path['img:common'] %>common-logo-94x94.webp 94w, <%= meta.path['img:common'] %>common-logo-141x141.webp 141w" />
+                                <img class="c-logo__image" width="141" height="141" src="<%= meta.path['img:common'] %>common-logo-141x141.png" sizes="" srcset="<%= meta.path['img:common'] %>common-logo-47x47.png 47w, <%= meta.path['img:common'] %>common-logo-94x94.png 94w, <%= meta.path['img:common'] %>common-logo-141x141.png 141w" alt="logo image" decoding="async" loading="eager" />
+                            </picture>
+                        </div>
+                        <div class="c-logo__name">
+                            <% if (page === 'top') { %>
+                            <h1 class="c-text__size--xl c-text__weight--bold">ユアコーディング</h1>
+                            <% } else { %>
+                            <span class="c-text__size--xl c-text__weight--bold">>ユアコーディング</span>
+                            <% } %>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="l-header__hamburger u-visible__block--until-desktop u-z-200">
+                <button class="c-hamburger c-hamburger--shelf u-z-100" id="js-hamburger" aria-expanded="false" type="button">
+                    <div class="inner">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </button>
+            </div>
+            <nav class="l-header__navigation c-gnav u-z-100">
+                <ul class="c-gnav__list c-gnav__animation--sequence-fadein c-text__weight--bold">
+                    <li class="c-gnav__item">
+                        <a class="c-gnav__link" href="#top-feature">
+                            <span class="c-gnav__text">特徴</span>
+                        </a>
+                    </li>
+                    <li class="c-gnav__item">
+                        <a class="c-gnav__link" href="#top-price">
+                            <span class="c-gnav__text">価格</span>
+                        </a>
+                    </li>
+                    <li class="c-gnav__item">
+                        <a class="c-gnav__link" href="#top-contact">
+                            <span class="c-gnav__text">お問い合わせ</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="u-visible__block--until-desktop">
+                    <span class="c-gnav__separator c-gnav__animation--sequence-fadein c-separator c-separator__color--neutral-900"></span>
+                    <ul class="c-gnav__list c-gnav__animation--sequence-fadein c-text__weight--bold">
+                        <li class="c-gnav__item">
+                            <a class="c-gnav__link" href="">
+                                <span class="c-gnav__text">新着情報</span>
+                            </a>
+                        </li>
+                        <li class="c-gnav__item">
+                            <a class="c-gnav__link" href="">
+                                <span class="c-gnav__text">施設案内</span>
+                            </a>
+                        </li>
+                        <li class="c-gnav__item">
+                            <a class="c-gnav__link" href="">
+                                <span class="c-gnav__text">採用情報</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <span class="c-gnav__separator c-gnav__animation--sequence-fadein c-separator c-separator__color--neutral-900"></span>
+                    <ul class="c-gnav__list c-gnav__animation--sequence-fadein c-text__weight--bold">
+                        <li class="c-gnav__item">
+                            <a class="c-gnav__link" href="">
+                                <span class="c-gnav__text">プライバシーポリシー</span>
+                            </a>
+                        </li>
+                        <li class="c-gnav__item">
+                            <a class="c-gnav__link" href="">
+                                <span class="c-gnav__text">サイトポリシー</span>
+                            </a>
+                        </li>
+                        <li class="c-gnav__item">
+                            <a class="c-gnav__link" href="">
+                                <span class="c-gnav__text">サイトマップ</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <span class="c-gnav__separator c-gnav__animation--sequence-fadein c-separator c-separator__color--neutral-900"></span>
+                    <ul class="c-gnav__list c-gnav__animation--sequence-fadein c-text__weight--bold">
+                        <li class="c-gnav__item">
+                            <a class="c-gnav__link" href="">
+                                <span class="c-gnav__text">Twitter</span>
+                            </a>
+                        </li>
+                        <li class="c-gnav__item">
+                            <a class="c-gnav__link" href="">
+                                <span class="c-gnav__text">Instagram</span>
+                            </a>
+                        </li>
+                        <li class="c-gnav__item">
+                            <a class="c-gnav__link" href="">
+                                <span class="c-gnav__text">Facebook</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="l-header__contact u-visible__block--from-desktop">
+                <a class="c-button c-button__size--md c-button__color--gradient" href="#top-contact"><span class="c-text__color--white c-text__weight--bold">お問い合わせ</span></a>
+            </div>
+            <div class="l-header__overlay u-visible__block--until-desktop"></div>
+        </div>
+    </div>
+</header>
