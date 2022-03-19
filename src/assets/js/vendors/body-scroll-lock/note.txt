@@ -1,3 +1,0 @@
-bug fix
-- https://github.com/willmcpo/body-scroll-lock/pull/228/files
-- https://github.com/willmcpo/body-scroll-lock/issues/236

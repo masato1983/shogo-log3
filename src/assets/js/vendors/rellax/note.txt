@@ -1,2 +1,0 @@
-bug fix
-- https://github.com/dixonandmoe/rellax/pull/240
