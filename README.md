@@ -21,3 +21,8 @@
 -   problem: When referring to meta information, if the key contains special characters, it must be enclosed in square brackets, which is time consuming.
 -   resolve: The key naming convention is lowerCase.
 -   example: img:common(NG), imgCommon(ok)
+
+### gulp-json-sass-vars
+
+-   problem: Critical warning during installation.
+-   resolve: Since it is only used during development, the vulnerability is deemed not to be a particular problem.
