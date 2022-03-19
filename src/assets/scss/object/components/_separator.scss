@@ -1,0 +1,44 @@
+/* ==========================================================================
+Logo component
+========================================================================== */
+
+@use '../../abstracts/' as *;
+@use 'sass:math' as *;
+@use 'sass:list';
+
+/* base style */
+.c-separator {
+  display: block;
+  width: 100%;
+  height: fs-rem(1px);
+}
+
+/* color(neutral) */
+$color-names: (darken, darker, mid, lighter, lightest);
+
+@each $color-name in $color-names {
+  .c-separator__color--neutral-#{$color-name} {
+    background-color: var(--color-neutral-#{$color-name});
+  }
+}
+
+/* color(neutral shade) */
+@for $i from 1 through 9 {
+  .c-separator__color--neutral-#{$i * 100} {
+    background-color: var(--color-neutral-#{$i * 100});
+  }
+}
+
+/* color(black alpha) */
+@for $i from 1 through 9 {
+  .c-separator__color--black-alpha-#{$i * 100} {
+    background-color: var(--color-black-alpha-#{$i * 100});
+  }
+}
+
+/* color(white alpha) */
+@for $i from 1 through 9 {
+  .c-separator__color--white-alpha-#{$i * 100} {
+    background-color: var(--color-white-alpha-#{$i * 100});
+  }
+}

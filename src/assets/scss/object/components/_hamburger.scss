@@ -1,0 +1,249 @@
+/* ==========================================================================
+Hamburger component
+https://github.com/kapoko/delicious-hamburgers
+========================================================================== */
+@use '../../abstracts/' as *;
+@use 'sass:math';
+@use 'sass:list';
+@use 'sass:meta';
+
+// custom style
+$hamburger-animations: 'shelf';
+$hamburger-class-name: 'c-hamburger';
+$hamburger-active-class-name: 'is-active';
+$hamburger-size: 48px;
+$hamburger-thickness: 1px;
+$hamburger-color: var(--color-black);
+$hamburger-color-active: var(--color-white);
+$hamburger-background: var(--color-white);
+$hamburger-background-active: var(--color-black);
+$hamburger-padding: 12px;
+$hamburger-border-radius: 50%;
+$hamburger-bar-border-radius: 100vh;
+$hamburger-bar-spacing: 6px;
+
+// variable
+// https://github.com/kapoko/delicious-hamburgers/blob/main/scss/_variables.scss
+$hamburger-class-name: 'hamburger' !default;
+$hamburger-active-class-name: 'active' !default;
+$hamburger-size: 50px !default;
+$hamburger-width: $hamburger-size !default;
+$hamburger-thickness: 2px !default;
+$hamburger-color: #000 !default;
+$hamburger-color-hover: $hamburger-color !default;
+$hamburger-color-active: $hamburger-color !default;
+$hamburger-background: transparent !default;
+$hamburger-background-active: $hamburger-background !default;
+$hamburger-background-hover: $hamburger-background !default;
+$hamburger-background-transition-speed: 0.2s !default;
+$hamburger-border-color: transparent !default;
+$hamburger-border-width: 0 !default;
+$hamburger-opacity: 1 !default;
+$hamburger-opacity-hover: 1 !default;
+$hamburger-opacity-transition-speed: 0.2s !default;
+$hamburger-padding: math.round(math.div($hamburger-size, 10)) !default;
+$hamburger-border-radius: 0 !default;
+$hamburger-bar-border-radius: 0 !default;
+$hamburger-bar-spacing: math.round(math.div($hamburger-size, 5)) !default;
+$hamburger-animation-speed: 1 !default;
+$hamburger-extra-transition-rules: & !default;
+$hamburger-animations: (
+  'apple',
+  'arrow',
+  'arrow-right',
+  'collapse',
+  'converge',
+  'criss-cross',
+  'default',
+  'dive',
+  'minimal',
+  'spin',
+  'stack',
+  'twist',
+  'magnetic',
+  'chop',
+  'parallel',
+  'vertical',
+  'push',
+  'flatten',
+  'simple',
+  'shelf'
+) !default;
+$hamburger-bar-size: $hamburger-size - ($hamburger-padding * 2) - ($hamburger-border-width * 2);
+$hamburger-easing: cubic-bezier(0.645, 0.045, 0.355, 1) !default;
+$hamburger-easing-in: cubic-bezier(0.55, 0.055, 0.675, 0.19) !default;
+$hamburger-easing-out: cubic-bezier(0.215, 0.61, 0.355, 1) !default;
+$root-two: math.sqrt(2);
+
+// base style
+// https://github.com/kapoko/delicious-hamburgers/blob/main/scss/_base.scss
+@mixin hamburger-bar() {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: $hamburger-thickness;
+  background-color: $hamburger-color;
+  border-radius: $hamburger-bar-border-radius;
+  content: '';
+}
+
+button.#{$hamburger-class-name} {
+  width: $hamburger-width;
+  height: $hamburger-size;
+}
+
+div.#{$hamburger-class-name} {
+  width: $hamburger-width - ($hamburger-border-width * 2);
+  height: $hamburger-size - ($hamburger-border-width * 2);
+
+  > .inner {
+    top: 50%;
+  }
+}
+
+.#{$hamburger-class-name} {
+  $base-transitions: opacity $hamburger-opacity-transition-speed $hamburger-easing,
+    background $hamburger-background-transition-speed $hamburger-easing;
+
+  display: inline-block;
+  padding: $hamburger-padding;
+  overflow: visible;
+  color: inherit;
+  font: inherit;
+  text-transform: none;
+  background-color: $hamburger-background;
+  border: $hamburger-border-width $hamburger-border-color solid;
+  border-radius: $hamburger-border-radius;
+  cursor: pointer;
+  opacity: $hamburger-opacity;
+  transition: list.append($base-transitions, $hamburger-extra-transition-rules);
+
+  &:hover {
+    background-color: $hamburger-background-hover;
+    opacity: $hamburger-opacity-hover;
+
+    span.bar {
+      background-color: $hamburger-color-hover;
+    }
+
+    > .inner,
+    span.bar {
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3) {
+        &::before,
+        &::after {
+          background-color: $hamburger-color-hover;
+        }
+      }
+    }
+  }
+
+  &.#{$hamburger-active-class-name} {
+    background-color: $hamburger-background-active;
+
+    span.bar {
+      background-color: $hamburger-color-active;
+    }
+
+    > .inner,
+    span.bar {
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3) {
+        &::before,
+        &::after {
+          background-color: $hamburger-color-active;
+        }
+      }
+    }
+  }
+
+  > .inner {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    margin-top: math.div(-$hamburger-thickness, 2);
+  }
+
+  span.bar {
+    @include hamburger-bar;
+
+    &:nth-child(1) {
+      top: -$hamburger-bar-spacing;
+    }
+
+    &:nth-child(3) {
+      top: $hamburger-bar-spacing;
+    }
+  }
+
+  &:focus {
+    @include focus();
+  }
+}
+
+// shelf style
+// https://github.com/kapoko/delicious-hamburgers/blob/main/scss/animations/_shelf.scss
+@if index($hamburger-animations, shelf) {
+  .#{$hamburger-class-name}--shelf {
+    $offset-y: math.div(math.div($hamburger-bar-size, 2), $root-two);
+    $offset-x: math.div($hamburger-bar-size, 2) - $offset-y;
+
+    span.bar {
+      transition:
+        transform math.div(0.3s, $hamburger-animation-speed) $hamburger-easing-out,
+        opacity math.div(0.2s, $hamburger-animation-speed)
+        $hamburger-easing math.div(0.1s, $hamburger-animation-speed);
+
+      &:nth-child(1) {
+        top: 0;
+        transform: translate3d(0, -$hamburger-bar-spacing, 0);
+      }
+
+      &:nth-child(2) {
+        transform: scaleX(0.5);
+        transform-origin: 0 50%;
+      }
+
+      &:nth-child(3) {
+        top: 0;
+        transform: scaleX(0.75) translate3d(0, $hamburger-bar-spacing, 0);
+        transform-origin: 0 50%;
+      }
+    }
+
+    &:hover {
+      span.bar {
+        &:nth-child(2) {
+          transform: scaleX(1);
+        }
+
+        &:nth-child(3) {
+          transform: scaleX(1) translate3d(0, $hamburger-bar-spacing, 0);
+        }
+      }
+    }
+
+    &.#{$hamburger-active-class-name} {
+      span.bar {
+        transition:
+          transform math.div(0.3s, $hamburger-animation-speed) $hamburger-easing,
+          opacity math.div(0.2s, $hamburger-animation-speed) $hamburger-easing;
+
+        &:nth-child(1) {
+          transform: rotate(45deg) translate3d(0, 0, 0);
+        }
+
+        &:nth-child(2) {
+          transform: scaleX(0);
+          opacity: 0;
+        }
+
+        &:nth-child(3) {
+          transform: rotate(-45deg) translate3d(-$offset-x, $offset-y, 0);
+        }
+      }
+    }
+  }
+}

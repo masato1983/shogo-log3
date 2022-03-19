@@ -19,7 +19,7 @@
   .u-visible__block--until-#{$name} {
     display: block;
 
-    @include mq($until: #{$name}) {
+    @include mq($from: #{$name}) {
       display: none;
     }
   }
@@ -40,7 +40,7 @@
   .u-visible__inline-block--until-#{$name} {
     display: inline-block;
 
-    @include mq($until: #{$name}) {
+    @include mq($from: #{$name}) {
       display: none;
     }
   }
@@ -61,7 +61,7 @@
   .u-visible__inline--until-#{$name} {
     display: inline;
 
-    @include mq($until: #{$name}) {
+    @include mq($from: #{$name}) {
       display: none;
     }
   }

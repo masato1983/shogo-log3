@@ -4,3 +4,106 @@
 
 @use '../abstracts/' as *;
 @use 'sass:math' as *;
+
+/* header layout */
+.l-header {
+  position: sticky;
+  top: 0;
+  background-color: var(--color-white);
+  box-shadow: 0 fs-rem(3px) fs-rem(6px) 0 var(--color-black-alpha-200);
+  transition: transform var(--duration-300) var(--ease-in-out-quint);
+
+  /* header scroll toggle hide */
+  &.is-scroll-down {
+    transform: translateY(-120%);
+    transition-delay: 0;
+  }
+
+  /* header scroll toggle appear */
+  &.is-scroll-up {
+    transform: translateY(0);
+    transition-delay: 0.2s;
+  }
+}
+
+/* inner layout */
+.l-header__inner {
+  display: flex;
+  align-items: center;
+  height: fs-rem(72px);
+
+  @include mq($from: desktop) {
+    height: fs-rem(94px);
+  }
+}
+
+/* logo layout */
+.l-header__logo {
+  @include mq($from: desktop) {
+    flex-basis: 30%;
+  }
+}
+
+/* navigation layout */
+.l-header__navigation {
+  @include mq($until: desktop) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--color-white);
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform var(--duration-400) var(--ease-in-cubic), opacity var(--duration-400) var(--ease-in-cubic);
+    transition-delay: 200ms;
+
+    @include mq($from: tablet) {
+      max-width: fs-rem(600px);
+    }
+
+    &.is-open {
+      transform: translateX(0);
+      opacity: 1;
+      transition-delay: 0s;
+    }
+  }
+
+  @include mq($from: desktop) {
+    flex-basis: 40%;
+  }
+}
+
+/* contact layout */
+.l-header__contact {
+  text-align: right;
+
+  @include mq($from: desktop) {
+    flex-basis: 30%;
+  }
+}
+
+/* hamburger layout */
+.l-header__hamburger {
+  margin-left: auto;
+}
+
+/* overlay layout */
+.l-header__overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--color-black-alpha-400);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity var(--duration-400) var(--ease-in-cubic), visibility var(--duration-400) var(--ease-in-cubic);
+
+  &.is-open {
+    visibility: visible;
+    opacity: 1;
+  }
+}

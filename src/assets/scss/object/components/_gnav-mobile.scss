@@ -1,0 +1,38 @@
+// ==========================================================================
+// gnav-mobile component
+// ==========================================================================
+
+@use '../../abstracts/' as *;
+@use 'sass:math' as *;
+
+/* base layout */
+.c-gnav {
+  padding: fs-rem(100px) fs-rem(60px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+/* item layout */
+.c-gnav__item {
+  padding-top: fs-rem(12px);
+  padding-bottom: fs-rem(12px);
+}
+
+/* separator layout */
+.c-gnav__separator {
+  margin-top: fs-rem(52px);
+  margin-bottom: fs-rem(52px);
+}
+
+/* text animation */
+.c-gnav__animation--sequence-fadein {
+  transform: translateX(12px);
+  opacity: 0;
+  transition: opacity var(--duration-700) var(--ease-out-quint), transform var(--duration-700) var(--ease-out-quint);
+
+  .l-header__navigation.is-open & {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

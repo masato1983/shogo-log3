@@ -38,91 +38,31 @@ Text component
 // ==========================================================================
 
 .c-text__size--xs {
-  font-size: fs-rem(13px);
+  font-size: var(--font-size-xs);
+}
 
-  @include mq($from: tablet) {
-    font-size: fs-rem(14px);
-  }
+.c-text__size--sm {
+  font-size: var(--font-size-sm);
 }
 
 .c-text__size--md {
-  font-size: fs-rem(14px);
-
-  @include mq($from: tablet) {
-    font-size: fs-rem(15px);
-  }
+  font-size: var(--font-size-md);
 }
 
 .c-text__size--lg {
-  font-size: fs-rem(14px);
-
-  @include mq($from: tablet) {
-    font-size: fs-rem(15px);
-  }
-
-  @include mq($from: wide) {
-    font-size: fs-rem(16px);
-  }
+  font-size: var(--font-size-lg);
 }
 
 .c-text__size--xl {
-  font-size: fs-rem(20px);
-
-  @include mq($from: tablet) {
-    font-size: fs-rem(21px);
-  }
-
-  @include mq($from: laptop) {
-    font-size: fs-rem(22px);
-  }
-
-  @include mq($from: desktop) {
-    font-size: fs-rem(23px);
-  }
-
-  @include mq($from: wide) {
-    font-size: fs-rem(24px);
-  }
+  font-size: var(--font-size-xl);
 }
 
 .c-text__size--2xl {
-  font-size: fs-rem(24px);
-
-  @include mq($from: tablet) {
-    font-size: fs-rem(25px);
-  }
-
-  @include mq($from: laptop) {
-    font-size: fs-rem(26px);
-  }
-
-  @include mq($from: desktop) {
-    font-size: fs-rem(27px);
-  }
-
-  @include mq($from: wide) {
-    font-size: fs-rem(28px);
-  }
+  font-size: var(--font-size-2xl);
 }
 
 .c-text__size--3xl {
-  font-size: fs-rem(28px);
-
-  @include mq($from: tablet) {
-    font-size: fs-rem(29px);
-  }
-
-  @include mq($from: laptop) {
-    font-size: fs-rem(30px);
-  }
-
-  @include mq($from: desktop) {
-    font-size: fs-rem(31px);
-  }
-
-  @include mq($from: wide) {
-    font-size: fs-rem(32px);
-  }
+  font-size: var(--font-size-3xl);
 }
 
 // ==========================================================================
@@ -382,11 +322,7 @@ Text component
 // ==========================================================================
 
 .c-text__hover {
-  transition: color 0.3s var(--ease-in-out-cubic);
-
-  @media screen and (prefers-reduced-motion: reduce) {
-    transition: none;
-  }
+  transition: color var(--duration-300) var(--ease-in-out-cubic);
 
   @include hover {
     color: var(--color-neutral-extra-lighter);
@@ -399,7 +335,7 @@ Text component
 
   &::before,
   &::after {
-    transition: color 0.3s var(--ease-in-out-cubic);
+    transition: color var(--duration-300) var(--ease-in-out-cubic);
   }
 }
 
@@ -418,7 +354,7 @@ Text component
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition: background-position 0.3s var(--ease-in-out-cubic);
+  transition: background-position var(--duration-300) var(--ease-in-out-cubic);
 
   @include hover {
     background-position: 0 100%;
@@ -430,18 +366,14 @@ Text component
   overflow: hidden;
   color: var(--color-link);
   vertical-align: bottom;
-  transition: clip-path 0.3s var(--ease-in-out-cubic);
-
-  @include hover-before-pseudo-element {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
+  transition: clip-path var(--duration-300) var(--ease-in-out-cubic);
 }
 
 .c-text__animation__hover-tech2::before {
   position: absolute;
   color: var(--color-link-hover);
   text-decoration: underline;
-  transition: clip-path 0.3s var(--ease-in-out-cubic);
+  transition: clip-path var(--duration-300) var(--ease-in-out-cubic);
   content: attr(data-content);
   clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
   text-decoration-color: var(--color-link-hover);

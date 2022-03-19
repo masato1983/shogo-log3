@@ -106,6 +106,13 @@
   --line-height-loose: 2;
   --line-height-extra-loose: 2.375;
 
+  /* container */
+  --container-xs: calc(100% - 440px);
+  --container-sm: calc(100% - 344px);
+  --container-md: calc(100% - 280px);
+  --container-lg: calc(100% - 140px);
+  --container-xl: calc(100% - 40px);
+
   /* easing timing function (https://www.npmjs.com/package/easings-css) */
   --ease-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);
   --ease-out-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
@@ -131,4 +138,66 @@
   --ease-in-back: cubic-bezier(0.6, -0.28, 0.735, 0.045);
   --ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   --ease-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* transition duration */
+  @for $i from 0 through 20 {
+    --duration-#{$i * 50}: #{$i * 50}ms;
+  }
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    @for $i from 0 through 20 {
+      --duration-#{$i * 50}: 0ms;
+    }
+  }
+
+  /* transition delay */
+  @for $i from 0 through 20 {
+    --delay-#{$i * 50}: #{$i * 50}ms;
+  }
+
+  /* z-index */
+  @for $i from 0 through 9 {
+    --z-#{$i * 100}: #{$i * 100};
+  }
+
+  /* font-size */
+  @each $breakpoint, $font-sizes in $type-scale {
+    @if $breakpoint == mobile {
+      @each $font-size, $value in $font-sizes {
+        --font-size-#{$font-size}: #{$value};
+      }
+    }
+
+    @else if $breakpoint == tablet {
+      @include mq($from: tablet) {
+        @each $font-size, $value in $font-sizes {
+          --font-size-#{$font-size}: #{$value};
+        }
+      }
+    }
+
+    @else if $breakpoint == desktop {
+      @include mq($from: desktop) {
+        @each $font-size, $value in $font-sizes {
+          --font-size-#{$font-size}: #{$value};
+        }
+      }
+    }
+
+    @else if $breakpoint == wide {
+      @include mq($from: wide) {
+        @each $font-size, $value in $font-sizes {
+          --font-size-#{$font-size}: #{$value};
+        }
+      }
+    }
+
+    @else if $breakpoint == full {
+      @include mq($from: full) {
+        @each $font-size, $value in $font-sizes {
+          --font-size-#{$font-size}: #{$value};
+        }
+      }
+    }
+  }
 }
