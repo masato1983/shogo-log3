@@ -4,6 +4,11 @@
 
 @use '../../abstracts/' as *;
 
+/* none */
+.u-display__none {
+  display: none;
+}
+
 /* inline */
 .u-display__inline {
   display: inline;

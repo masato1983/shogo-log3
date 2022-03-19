@@ -6,7 +6,7 @@
 @use 'sass:math' as *;
 
 html {
-  background: var(--color-neutral-darken);
+  background-color: var(--color-white);
 }
 
 body,
@@ -19,7 +19,7 @@ footer {
 body {
   overflow-x: hidden; // Workaround side-scrolling problem caused by full-bleed.
   hyphens: auto;
-  background-color: var(--color-neutral-darken);
+  background-color: var(--color-white);
   hanging-punctuation: allow-end;
   text-size-adjust: 100%;
   font-kerning: normal;

@@ -1,0 +1,18 @@
+// ==========================================================================
+// gnav-desktop component
+// ==========================================================================
+
+@use '../../abstracts/' as *;
+@use 'sass:math' as *;
+
+/* list layout */
+.c-gnav__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* link layout */
+.c-gnav__link {
+  padding: fs-rem(8px) fs-rem(24px);
+}

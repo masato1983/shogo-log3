@@ -1,0 +1,38 @@
+/* ==========================================================================
+Hamburger component
+========================================================================== */
+@use '../../abstracts/' as *;
+@use 'sass:meta';
+
+// base custom style
+@include meta.load-css('node_modules/delicious-hamburgers/scss/base', $with: (
+  'hamburger-class-name': 'c-hamburger',
+  'hamburger-active-class-name': 'is-active',
+  'hamburger-size': 48px,
+  'hamburger-thickness': 1px,
+  'hamburger-color': var(--color-black),
+  'hamburger-color-active': var(--color-white),
+  'hamburger-background': var(--color-white),
+  'hamburger-background-active': var(--color-black),
+  'hamburger-padding': 12px,
+  'hamburger-border-radius': 50%,
+  'hamburger-bar-border-radius': 100vh,
+  'hamburger-bar-spacing': 6px
+));
+
+// animation custom style
+@include meta.load-css('node_modules/delicious-hamburgers/scss/animations/shelf', $with: (
+  'hamburger-class-name': 'c-hamburger',
+  'hamburger-active-class-name': 'is-active',
+  'hamburger-size': 48px,
+  'hamburger-padding': 12px,
+  'hamburger-border-width': 0,
+  'hamburger-bar-spacing': 6px
+));
+
+// override style
+.c-hamburger {
+  @include focus();
+
+  transform: translateX(12px); // Move the hamburger button to the right by the amount of padding.
+}

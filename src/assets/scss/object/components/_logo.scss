@@ -1,0 +1,29 @@
+/* ==========================================================================
+Logo component
+========================================================================== */
+
+@use '../../abstracts/' as *;
+@use 'sass:math' as *;
+
+/* link layout */
+.c-logo__link {
+  display: flex;
+  align-items: center;
+  width: fit-content; // Fit the focus area to the element
+}
+
+/* image wraper */
+.c-logo__image-wrapper {
+  width: fs-rem(32px);
+  height: fs-rem(32px);
+
+  @include mq($from: desktop) {
+    width: fs-rem(47px);
+    height: fs-rem(47px);
+  }
+}
+
+/* name layout */
+.c-logo__name {
+  margin-left: fs-rem(16px);
+}

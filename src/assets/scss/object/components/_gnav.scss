@@ -1,0 +1,17 @@
+/* ==========================================================================
+gnav component
+========================================================================== */
+
+@use '../../abstracts/' as *;
+@use 'sass:math' as *;
+@use 'sass:meta';
+
+/* mobile layout */
+@include mq($until: desktop) {
+  @include meta.load-css('gnav-mobile');
+}
+
+/* desktop layout */
+@include mq($from: desktop) {
+  @include meta.load-css('gnav-desktop');
+}
