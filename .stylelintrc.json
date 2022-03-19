@@ -10,6 +10,7 @@
         "alpha-value-notation": "number",
         "at-rule-no-vendor-prefix": null,
         "color-function-notation": "legacy",
+        "custom-property-pattern": null,
         "declaration-block-no-redundant-longhand-properties": null,
         "max-line-length": null,
         "max-nesting-depth": [
