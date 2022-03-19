@@ -39,6 +39,8 @@
             {
                 "ignoreFunctions": ["fs-rem"]
             }
-        ]
+        ],
+        "no-descending-specificity": null,
+        "selector-no-qualifying-type": null
     }
 }
