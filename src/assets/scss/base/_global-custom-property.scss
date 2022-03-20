@@ -106,13 +106,6 @@
   --line-height-loose: 2;
   --line-height-extra-loose: 2.375;
 
-  /* container */
-  --container-xs: calc(100% - 440px);
-  --container-sm: calc(100% - 344px);
-  --container-md: calc(100% - 280px);
-  --container-lg: calc(100% - 140px);
-  --container-xl: calc(100% - 40px);
-
   /* easing timing function (https://www.npmjs.com/package/easings-css) */
   --ease-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);
   --ease-out-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
@@ -157,7 +150,7 @@
 
   /* z-index */
   @for $i from 0 through 9 {
-    --z-#{$i * 100}: #{$i * 100};
+    --z-#{$i * 10}: #{$i * 10};
   }
 
   /* font-size */

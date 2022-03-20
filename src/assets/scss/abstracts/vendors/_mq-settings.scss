@@ -13,8 +13,8 @@ $mq_breakpoints: (
 
 $mq_media-type: 'all';
 
-// $show-breakpoints: (mobile, landscape, tablet, desktop, wide, full);
-$mq_show-breakpoints: ();
+$mq_show-breakpoints: (mobile, landscape, tablet, desktop, wide, full);
+// $mq_show-breakpoints: ();
 
 @forward './mq'  with (
   $breakpoints: $mq_breakpoints,
