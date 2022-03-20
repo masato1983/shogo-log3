@@ -1,11 +1,11 @@
+
 /* ==========================================================================
-   z-index utility
+   Margin utility
    ========================================================================== */
 
 @use '../../abstracts/' as *;
 
-@for $i from 0 through 9 {
-   .u-z--#{$i * 10} {
-      z-index: var(--z-#{$i * 10});
-   }
-};
+.u-mx--auto {
+    margin-left: auto;
+    margin-right: auto;
+}

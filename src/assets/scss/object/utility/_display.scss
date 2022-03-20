@@ -9,6 +9,22 @@
   display: none;
 }
 
+@each $name, $value in $breakpoint {
+  .u-display__none--from-#{$name} {
+    @include mq($from: #{$name}) {
+      display: none;
+    }
+  }
+}
+
+@each $name, $value in $breakpoint {
+  .u-display__none--until-#{$name} {
+    @include mq($until: #{$name}) {
+      display: none;
+    }
+  }
+}
+
 /* inline */
 .u-display__inline {
   display: inline;

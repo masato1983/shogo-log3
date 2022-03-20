@@ -26,6 +26,19 @@
   }
 }
 
+/* container layout */
+.l-header__container {
+  width: min(100% - var(--padding, rem(40px)), var(--max-width, rem(1920px)));
+
+  @include mq($from: tablet) {
+    --padding: rem(120px);
+  }
+
+  @include mq($from: wide) {
+    --padding: rem(240px);
+  }
+}
+
 /* inner layout */
 .l-header__inner {
   display: flex;

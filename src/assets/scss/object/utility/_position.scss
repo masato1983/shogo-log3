@@ -1,0 +1,25 @@
+/* ==========================================================================
+   Position utility
+   ========================================================================== */
+
+@use '../../abstracts/' as *;
+
+.u-position--static {
+    position: static;
+}
+
+.u-position--fixed {
+    position: fixed;
+}
+
+.u-position--absolute {
+    position: absolute;
+}
+
+.u-position--relative {
+    position: relative;
+}
+
+.u-position--sticky {
+    position: sticky;
+}

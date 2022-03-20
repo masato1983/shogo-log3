@@ -1,0 +1,100 @@
+/* ==========================================================================
+   Top-key-visual project
+   ========================================================================== */
+
+@use '../../../abstracts/' as *;
+@use 'sass:math' as *;
+
+/* overview */
+.p-top-kv {
+  position: relative;
+}
+
+/* media-01 layout */
+.p-top-kv__media-01 {
+  @include fs-scale(width, ($breakpoint-mobile: 500px, $breakpoint-wide: 623px, $breakpoint-full: 800px));
+
+  position: absolute;
+  top: fs-rem(-124px);
+  right: fs-rem(-85px);
+  margin-left: auto;
+}
+
+/* container layout */
+.p-top-kv__container {
+  width: min(100% - var(--padding, rem(40px)), var(--max-width, rem(1400px)));
+
+  @include mq($from: mobile) {
+    --padding: rem(80px);
+  }
+
+  @include mq($from: landscape) {
+    --padding: rem(120px);
+  }
+
+  @include mq($from: tablet) {
+    --padding: rem(160px);
+  }
+
+  @include mq($from: desktop) {
+    --padding: rem(384px);
+  }
+}
+
+/* inner layout */
+.p-top-kv__inner {
+  display: grid;
+  grid-template:
+    'top-body' auto
+    'top-media' auto / 1fr;
+  align-items: center;
+  padding-top: fs-rem(40px);
+  padding-bottom: fs-rem(40px);
+
+  @include mq($from: landscape) {
+    grid-template: 'top-kv' auto / 1fr;
+    padding-top: fs-rem(130px);
+    padding-bottom: fs-rem(110px);
+  }
+}
+
+/* body layout */
+.p-top-kv__body {
+  grid-area: top-body;
+
+  @include mq($from: landscape) {
+    grid-area: top-kv;
+  }
+}
+
+/* media-02 layout */
+.p-top-kv__media-02 {
+  @include fs-scale(width, ($breakpoint-mobile: 320px, $breakpoint-wide: 518px, $breakpoint-full: 700px));
+
+  grid-area: top-media;
+  justify-self: end;
+  margin-top: fs-rem(24px);
+
+  @include mq($from: landscape) {
+    grid-area: top-kv;
+    margin-top: 0;
+  }
+}
+
+/* text layout */
+.p-top-kv__text {
+  margin-top: fs-rem(16px);
+
+  @include mq($from: landscape) {
+    margin-top: fs-rem(44px);
+  }
+}
+
+/* link layout */
+.p-top-kv__link {
+  margin-top: fs-rem(24px);
+
+  @include mq($from: landscape) {
+    margin-top: fs-rem(44px);
+  }
+}
