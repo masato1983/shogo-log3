@@ -1,0 +1,23 @@
+
+/* ==========================================================================
+   Break utility
+   ========================================================================== */
+
+@use '../../abstracts/' as *;
+
+
+@each $name, $value in $breakpoint {
+  .u-break--from-#{$name} {
+    @include mq($until: #{$name}) {
+      display: none;
+    }
+  }
+}
+
+@each $name, $value in $breakpoint {
+  .u-break--until-#{$name} {
+    @include mq($from: #{$name}) {
+      display: none;
+    }
+  }
+}

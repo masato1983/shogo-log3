@@ -13,6 +13,24 @@
   overscroll-behavior: contain;
 }
 
+/* list layout (sequence fade in animation) */
+.c-gnav__list {
+  transform: translateX(12px);
+  opacity: 0;
+
+
+  .l-header__navigation.is-open & {
+    transform: translateX(0);
+    opacity: 1;
+
+    // Fix Layout Flickering with JavaScript
+    // https://ishadeed.com/article/layout-flickering/
+    transition-timing-function: var(--ease-out-quint);
+    transition-duration: var(--duration-700);
+    transition-property: opacity, transform;
+  }
+}
+
 /* item layout */
 .c-gnav__item {
   padding-top: fs-rem(12px);
@@ -23,16 +41,4 @@
 .c-gnav__separator {
   margin-top: fs-rem(52px);
   margin-bottom: fs-rem(52px);
-}
-
-/* text animation */
-.c-gnav__animation--sequence-fadein {
-  transform: translateX(12px);
-  opacity: 0;
-  transition: opacity var(--duration-700) var(--ease-out-quint), transform var(--duration-700) var(--ease-out-quint);
-
-  .l-header__navigation.is-open & {
-    transform: translateX(0);
-    opacity: 1;
-  }
 }

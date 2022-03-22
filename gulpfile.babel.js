@@ -76,7 +76,7 @@ export const serve = (done) => {
         },
         https: true,
         ghostMode: false, // for Polypane app
-        browser: ['google chrome'],
+        browser: ['google chrome', 'firefox'],
     });
     done();
 };

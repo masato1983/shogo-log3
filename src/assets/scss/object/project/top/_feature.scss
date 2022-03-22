@@ -1,0 +1,145 @@
+/* ==========================================================================
+   Top-feature project
+   ========================================================================== */
+
+@use '../../../abstracts/' as *;
+@use 'sass:math' as *;
+
+/* base layout */
+.p-top-feature {
+  margin-top: fs-rem(74px);
+}
+
+/* subtitle layout */
+.p-top-feature__subtitle {
+  margin-top: fs-rem(10px);
+}
+
+/* iterm layout */
+.p-top-feature__item {
+  &:nth-of-type(1) {
+    margin-top: fs-rem(57px);
+  }
+
+  &:nth-of-type(2) {
+    margin-top: fs-rem(82px);
+  }
+
+  &:nth-of-type(3) {
+    margin-top: fs-rem(122px);
+  }
+}
+
+/* card layout */
+.p-top-feature__card-01,
+.p-top-feature__card-02,
+.p-top-feature__card-03 {
+  @include mq($from: tablet) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// only card-01 layout
+.p-top-feature__card-01 {
+  flex-direction: row;
+  margin-top: fs-rem(49px);
+}
+
+// only card-02 layout
+.p-top-feature__card-02 {
+  flex-direction: row-reverse;
+  margin-top: fs-rem(61px);
+}
+
+// only card-03 layout
+.p-top-feature__card-03 {
+  flex-direction: row;
+  margin-top: fs-rem(62px);
+}
+
+/* common media layout */
+.p-top-feature__media-01,
+.p-top-feature__media-02,
+.p-top-feature__media-03 {
+  @include mq($from: tablet) {
+    flex-grow: 1;
+  }
+}
+
+/* only media-01 layout */
+.p-top-feature__media-01 {
+  @include mq($from: tablet) {
+    width: fs-rem(380px);
+  }
+}
+
+/* only media-02 layout */
+.p-top-feature__media-02 {
+  @include mq($from: tablet) {
+    width: fs-rem(479px);
+  }
+}
+
+/* only media-03 layout */
+.p-top-feature__media-03 {
+  @include mq($from: tablet) {
+    width: fs-rem(400px);
+  }
+}
+
+/* common textbox layout */
+.p-top-feature__textbox-01,
+.p-top-feature__textbox-02,
+.p-top-feature__textbox-03 {
+  margin-top: fs-rem(32px);
+
+  @include mq($from: tablet) {
+    flex-grow: 1;
+    margin-top: fs-rem(0);
+  }
+}
+
+/* only textbox-01 layout */
+.p-top-feature__textbox-01 {
+  @include mq($from: tablet) {
+    width: fs-rem(501.86px); // base size refer to firefox devtool
+    margin-left: fs-rem(72px);
+  }
+
+  @include mq($from: wide) {
+    margin-left: fs-rem(157px);
+  }
+}
+
+/* only textbox-02 layout */
+.p-top-feature__textbox-02 {
+  @include mq($from: tablet) {
+    width: fs-rem(446.57px); // base size refer to firefox devtool
+    margin-right: fs-rem(52px);
+  }
+
+  @include mq($from: wide) {
+    margin-right: fs-rem(84px);
+  }
+}
+
+/* only textbox-03 layout */
+.p-top-feature__textbox-03 {
+  @include mq($from: tablet) {
+    width: fs-rem(349.92px); // base size refer to firefox devtool
+    margin-left: fs-rem(62px);
+  }
+
+  @include mq($from: wide) {
+    margin-left: fs-rem(173px);
+  }
+}
+
+/* common paragraph layout */
+.p-top-feature__paragraph-01,
+.p-top-feature__paragraph-02,
+.p-top-feature__paragraph-03 {
+  margin-top: fs-rem(36px);
+}

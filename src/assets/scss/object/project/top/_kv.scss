@@ -12,33 +12,12 @@
 
 /* media-01 layout */
 .p-top-kv__media-01 {
-  @include fs-scale(width, ($breakpoint-mobile: 500px, $breakpoint-wide: 623px, $breakpoint-full: 800px));
+  @include fs-scale(width, ($breakpoint-mobile: 500px, $breakpoint-wide: 708px, $breakpoint-full: 900px));
 
   position: absolute;
   top: fs-rem(-124px);
   right: fs-rem(-85px);
   margin-left: auto;
-}
-
-/* container layout */
-.p-top-kv__container {
-  width: min(100% - var(--padding, rem(40px)), var(--max-width, rem(1400px)));
-
-  @include mq($from: mobile) {
-    --padding: rem(80px);
-  }
-
-  @include mq($from: landscape) {
-    --padding: rem(120px);
-  }
-
-  @include mq($from: tablet) {
-    --padding: rem(160px);
-  }
-
-  @include mq($from: desktop) {
-    --padding: rem(384px);
-  }
 }
 
 /* inner layout */
@@ -61,9 +40,21 @@
 /* body layout */
 .p-top-kv__body {
   grid-area: top-body;
+  margin-top: fs-rem(-12px);
 
   @include mq($from: landscape) {
     grid-area: top-kv;
+  }
+}
+
+.p-top-kv__copy {
+  @include fs-scale(font-size, ($breakpoint-mobile: 28px, $breakpoint-wide: 32px, $breakpoint-full: 48px));
+
+  margin-top: fs-rem(24px);
+  line-height: 1.4375;
+
+  @include mq($from: landscape) {
+    margin-top: fs-rem(0);
   }
 }
 
@@ -83,18 +74,20 @@
 
 /* text layout */
 .p-top-kv__text {
-  margin-top: fs-rem(16px);
+  @include fs-scale(font-size, ($breakpoint-mobile: 14px, $breakpoint-wide: 16px, $breakpoint-full: 20px));
+
+  margin-top: fs-rem(45px);
 
   @include mq($from: landscape) {
-    margin-top: fs-rem(44px);
+    margin-top: fs-rem(45px);
   }
 }
 
 /* link layout */
 .p-top-kv__link {
-  margin-top: fs-rem(24px);
+  margin-top: fs-rem(45px);
 
   @include mq($from: landscape) {
-    margin-top: fs-rem(44px);
+    margin-top: fs-rem(45px);
   }
 }

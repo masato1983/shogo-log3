@@ -51,3 +51,7 @@ dt,
 th {
   font-weight: normal;
 }
+
+.resize-animation-stopper * {
+  transition: none !important;
+}

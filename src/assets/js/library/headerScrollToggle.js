@@ -3,13 +3,14 @@
 // https://codingreflections.com/hide-header-on-scroll-down/
 // ============================================================================
 
-export let headerScrollToggle = (arg) => {
+export let headerScrollToggle = () => {
     let curScroll = window.scrollY || document.documentElement.scrollTop;
     let prevScroll = window.scrollY || document.documentElement.scrollTop;
     let curDirection = 0;
     let prevDirection = 0;
 
     let header = document.querySelector('.l-header');
+    let headerNavigation = document.querySelector('.l-header__navigation');
 
     let threshold = 200;
     let toggled;
@@ -34,18 +35,20 @@ export let headerScrollToggle = (arg) => {
     };
 
     let toggleHeader = () => {
-        toggled = true;
-        if (curDirection === 2 && curScroll > threshold) {
-            header.classList.add('is-scroll-down');
-            header.classList.remove('is-scroll-up');
-        } else if (curDirection === 1) {
-            header.classList.add('is-scroll-up');
-            header.classList.remove('is-scroll-down');
-        } else {
-            toggled = false;
-        }
+        if (!headerNavigation.classList.contains('is-open')) {
+            toggled = true;
+            if (curDirection === 2 && curScroll > threshold) {
+                header.classList.add('is-scroll-down');
+                header.classList.remove('is-scroll-up');
+            } else if (curDirection === 1) {
+                header.classList.add('is-scroll-up');
+                header.classList.remove('is-scroll-down');
+            } else {
+                toggled = false;
+            }
 
-        return toggled;
+            return toggled;
+        }
     };
 
     window.addEventListener('scroll', checkScroll);
