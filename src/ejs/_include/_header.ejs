@@ -2,15 +2,15 @@
     <div class="l-header__container u-mx--auto">
         <div class="l-header__inner" data-scroll-header>
             <div class="l-header__logo">
-                <div class="c-logo">
-                    <a class="c-logo__link" href="<%= meta.path['root'] %>">
-                        <div class="c-logo__image-wrapper">
+                <div class="p-logo">
+                    <a class="p-logo__link" href="<%= meta.path['root'] %>">
+                        <div class="p-logo__media">
                             <picture>
                                 <source type="image/webp" sizes="" srcset="<%= meta.path['img:common'] %>common-logo-47x47.webp 47w, <%= meta.path['img:common'] %>common-logo-94x94.webp 94w, <%= meta.path['img:common'] %>common-logo-141x141.webp 141w" />
-                                <img class="c-logo__image" width="141" height="141" src="<%= meta.path['img:common'] %>common-logo-141x141.png" sizes="" srcset="<%= meta.path['img:common'] %>common-logo-47x47.png 47w, <%= meta.path['img:common'] %>common-logo-94x94.png 94w, <%= meta.path['img:common'] %>common-logo-141x141.png 141w" alt="logo image" decoding="async" loading="eager" />
+                                <img class="p-logo__image" width="141" height="141" src="<%= meta.path['img:common'] %>common-logo-141x141.png" sizes="" srcset="<%= meta.path['img:common'] %>common-logo-47x47.png 47w, <%= meta.path['img:common'] %>common-logo-94x94.png 94w, <%= meta.path['img:common'] %>common-logo-141x141.png 141w" alt="logo image" decoding="async" loading="eager" />
                             </picture>
                         </div>
-                        <div class="c-logo__name">
+                        <div class="p-logo__name">
                             <% if (page === 'top') { %>
                             <h1 class="c-text__size--xl c-text__weight--bold">ユアコーディング</h1>
                             <% } else { %>
@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="l-header__hamburger u-visible__block--until-desktop u-z--20">
-                <button class="c-hamburger c-hamburger--shelf u-z--10" id="js-hamburger" aria-expanded="false" type="button">
+                <button class="c-hamburger c-hamburger--shelf u-z--10" aria-expanded="false" type="button">
                     <div class="inner">
                         <span class="bar"></span>
                         <span class="bar"></span>
@@ -30,7 +30,7 @@
                 </button>
             </div>
             <nav class="l-header__navigation c-gnav u-z--10">
-                <ul class="c-gnav__list c-gnav__animation--sequence-fadein c-text__weight--bold">
+                <ul class="c-gnav__list c-text__weight--bold">
                     <li class="c-gnav__item">
                         <a class="c-gnav__link" href="#top-feature">
                             <span class="c-gnav__text">特徴</span>
@@ -48,8 +48,8 @@
                     </li>
                 </ul>
                 <div class="u-visible__block--until-desktop">
-                    <span class="c-gnav__separator c-gnav__animation--sequence-fadein c-separator c-separator__color--neutral-900"></span>
-                    <ul class="c-gnav__list c-gnav__animation--sequence-fadein c-text__weight--bold">
+                    <span class="c-gnav__separator c-separator c-separator__color--neutral-900"></span>
+                    <ul class="c-gnav__list c-text__weight--bold">
                         <li class="c-gnav__item">
                             <a class="c-gnav__link" href="">
                                 <span class="c-gnav__text">新着情報</span>
@@ -66,8 +66,8 @@
                             </a>
                         </li>
                     </ul>
-                    <span class="c-gnav__separator c-gnav__animation--sequence-fadein c-separator c-separator__color--neutral-900"></span>
-                    <ul class="c-gnav__list c-gnav__animation--sequence-fadein c-text__weight--bold">
+                    <span class="c-gnav__separator c-separator c-separator__color--neutral-900"></span>
+                    <ul class="c-gnav__list c-text__weight--bold">
                         <li class="c-gnav__item">
                             <a class="c-gnav__link" href="">
                                 <span class="c-gnav__text">プライバシーポリシー</span>
@@ -84,8 +84,8 @@
                             </a>
                         </li>
                     </ul>
-                    <span class="c-gnav__separator c-gnav__animation--sequence-fadein c-separator c-separator__color--neutral-900"></span>
-                    <ul class="c-gnav__list c-gnav__animation--sequence-fadein c-text__weight--bold">
+                    <span class="c-gnav__separator c-separator c-separator__color--neutral-900"></span>
+                    <ul class="c-gnav__list c-text__weight--bold">
                         <li class="c-gnav__item">
                             <a class="c-gnav__link" href="">
                                 <span class="c-gnav__text">Twitter</span>
@@ -105,7 +105,7 @@
                 </div>
             </nav>
             <div class="l-header__contact u-visible__block--from-desktop">
-                <a class="c-button c-button__size--md c-button__color--gradient" href="#top-contact"><span class="c-text__color--white c-text__weight--bold">お問い合わせ</span></a>
+                <a class="c-button c-button__color--gradient" href="#top-contact"><span class="c-text__color--white c-text__weight--bold">お問い合わせ</span></a>
             </div>
             <div class="l-header__overlay u-visible__block--until-desktop"></div>
         </div>
