@@ -11,10 +11,10 @@ import 'core-js/modules/es.promise';
 import objectFitImages from 'object-fit-images';
 objectFitImages();
 
-// headerScrollToggle
+// headerScrollToggle library
 import { headerScrollToggle } from './library/headerScrollToggle';
 headerScrollToggle();
 
-// hamburgerMenuToggle
+// hamburgerMenuToggle library
 import { hamburgerMenuToggle } from './library/hamburgerMenuToggle';
 hamburgerMenuToggle();
