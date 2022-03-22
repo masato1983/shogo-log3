@@ -28,14 +28,18 @@
 
 /* container layout */
 .l-header__container {
-  width: min(100% - var(--padding, rem(40px)), var(--max-width, rem(1920px)));
+  width: min(100% - var(--padding, rem(40px)), var(--max-width, rem(1900px)));
 
   @include mq($from: tablet) {
     --padding: rem(120px);
   }
 
+  @include mq($from: desktop) {
+    --padding: rem(200px);
+  }
+
   @include mq($from: wide) {
-    --padding: rem(240px);
+    --padding: rem(385px);
   }
 }
 
@@ -68,9 +72,8 @@
     min-height: 100vh;
     background-color: var(--color-white);
     transform: translateX(100%);
+    visibility: hidden;
     opacity: 0;
-    transition: transform var(--duration-400) var(--ease-in-cubic), opacity var(--duration-400) var(--ease-in-cubic);
-    transition-delay: 200ms;
 
     @include mq($from: tablet) {
       max-width: fs-rem(600px);
@@ -78,8 +81,15 @@
 
     &.is-open {
       transform: translateX(0);
+      visibility: visible;
       opacity: 1;
+
+      // Fix Layout Flickering with JavaScript
+      // https://ishadeed.com/article/layout-flickering/
       transition-delay: 0s;
+      transition-timing-function: var(--ease-out-cubic);
+      transition-duration: var(--duration-400);
+      transition-property: transform, opacity, visibility;
     }
   }
 

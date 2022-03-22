@@ -10,8 +10,14 @@ Button component
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  padding: var(--padding-y, rem(7px)) var(--padding-x, rem(30px));
   border-radius: fs-rem(10px);
   box-shadow: 0 fs-rem(3px) fs-rem(6px) var(--color-black-alpha-200);
+
+  @include mq($from: full) {
+    --padding-x: rem(48px);
+    --padding-y: rem(12px);
+  }
 
   &:active {
     transform: translateY(fs-rem(1px));
@@ -21,25 +27,6 @@ Button component
     opacity: 0.65;
     pointer-events: none;
   }
-}
-
-/* size */
-.c-button__size--md {
-  padding: fs-rem(4px) fs-rem(12px);
-
-  @include mq($from: desktop) {
-    padding: fs-rem(8px) fs-rem(24px);
-  }
-
-  @include mq($from: full) {
-    padding: fs-rem(12px) fs-rem(48px);
-  }
-}
-
-/* size(fluid) */
-.c-button__fluid--md {
-  @include fs-scale((padding-left, padding-right), ($breakpoint-mobile: 12px, $breakpoint-desktop: 24px, $breakpoint-full: 48px));
-  @include fs-scale((padding-top, padding-bottom), ($breakpoint-mobile: 4px, $breakpoint-desktop: 8px, $breakpoint-full: 12px));
 }
 
 /* color */
