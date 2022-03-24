@@ -110,7 +110,7 @@
         "smooth-scroll": "16.1.3",
         "stylelint": "14.5.3",
         "stylelint-config-rational-order-fix": "0.1.9",
-        "stylelint-config-recommended-scss": "5.0.2",
+        "stylelint-config-recommended-scss": "6.0.0",
         "stylelint-config-sass-guidelines": "9.0.1",
         "stylelint-config-standard": "25.0.0",
         "stylelint-order": "5.0.0",
