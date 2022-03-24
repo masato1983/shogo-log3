@@ -1,0 +1,33 @@
+/* ==========================================================================
+   Top-price project
+   ========================================================================== */
+
+@use '../../../abstracts/' as *;
+@use 'sass:math' as *;
+
+/* base layout */
+.p-top-price {
+  margin-top: rem(72px);
+  padding-top: rem(55px);
+  padding-bottom: rem(68px);
+  background-color: var(--color-primary-lighter);
+
+  @include mq($from: tablet) {
+    margin-top: rem(112px);
+  }
+}
+
+/* subtitle layout */
+.p-top-price__subtitle {
+  margin-top: rem(11px);
+}
+
+/* table layout */
+.p-top-price__table {
+  margin-top: rem(70px);
+}
+
+/* annotation layout */
+.p-top-price__annotation {
+  margin-top: rem(36px);
+}
