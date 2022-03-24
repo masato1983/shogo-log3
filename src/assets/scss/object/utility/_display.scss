@@ -31,8 +31,16 @@
 }
 
 @each $name, $value in $breakpoint {
-  .u-display__inline--#{$name} {
+  .u-display__inline--from-#{$name} {
     @include mq($from: #{$name}) {
+      display: inline;
+    }
+  }
+}
+
+@each $name, $value in $breakpoint {
+  .u-display__inline--until-#{$name} {
+    @include mq($until: #{$name}) {
       display: inline;
     }
   }
@@ -44,8 +52,16 @@
 }
 
 @each $name, $value in $breakpoint {
-  .u-display__inline-block--#{$name} {
+  .u-display__inline-block--from-#{$name} {
     @include mq($from: #{$name}) {
+      display: inline-block;
+    }
+  }
+}
+
+@each $name, $value in $breakpoint {
+  .u-display__inline-block--until-#{$name} {
+    @include mq($until: #{$name}) {
       display: inline-block;
     }
   }
@@ -57,16 +73,16 @@
 }
 
 @each $name, $value in $breakpoint {
-  .u-display__block--#{$name} {
+  .u-display__block--from-#{$name} {
+    display: inline;
     @include mq($from: #{$name}) {
       display: block;
     }
   }
 }
 
-/* break */
 @each $name, $value in $breakpoint {
-  .u-display__break--#{$name} {
+  .u-display__block--until-#{$name} {
     display: block;
 
     @include mq($from: #{$name}) {
