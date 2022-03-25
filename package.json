@@ -101,7 +101,7 @@
         "postcss-object-fit-images": "1.1.2",
         "postcss-rem": "2.0.2",
         "postcss-viewport-height-correction": "1.1.1",
-        "prettier": "2.6.0",
+        "prettier": "2.6.1",
         "rellax": "1.12.1",
         "rimraf": "3.0.2",
         "sass": "1.49.9",
