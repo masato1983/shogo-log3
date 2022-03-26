@@ -18,3 +18,7 @@ headerScrollToggle();
 // hamburgerMenuToggle library
 import { hamburgerMenuToggle } from './library/hamburgerMenuToggle';
 hamburgerMenuToggle();
+
+// accordionToggle library
+import { accordionToggle } from './library/accordionToggle';
+accordionToggle();
