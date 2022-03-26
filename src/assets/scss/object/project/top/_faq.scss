@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Top-faq project
+   ========================================================================== */
+
+@use '../../../abstracts/' as *;
+@use 'sass:math' as *;
+
+/* base layout */
+.p-top-faq {
+  padding-top: rem(50px);
+  padding-bottom: rem(86px);
+}
+
+/* subtitle layout */
+.p-top-faq__subtitle {
+  margin-top: rem(12px);
+}
+
+/* accordion layout */
+.p-top-faq__accordion {
+  margin-top: rem(48px);
+}
