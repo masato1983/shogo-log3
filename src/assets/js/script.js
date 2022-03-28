@@ -22,3 +22,7 @@ hamburgerMenuToggle();
 // accordionToggle library
 import { accordionToggle } from './library/accordionToggle';
 accordionToggle();
+
+// parallax library
+import { parallax } from './library/parallax';
+parallax();
