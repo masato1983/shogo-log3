@@ -1,0 +1,60 @@
+/* ==========================================================================
+Accordion component
+========================================================================== */
+
+@use '../../abstracts/' as *;
+@use 'sass:math' as *;
+
+/* base style */
+.c-accordion {
+  border: rem(1px) solid var(--color-neutral-mid);
+  border-bottom: 0;
+}
+
+/* button layout */
+.c-accordion__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: rem(20px) rem(18px);
+  border-bottom: rem(1px) solid var(--color-neutral-mid);
+
+  &::after {
+    margin-left: rem(12px);
+    font-weight: var(--font-weight-black);
+    font-size: var(--font-size-lg);
+    transform: rotate(-90deg);
+    transition-timing-function: var(--ease-out-cubic);
+    transition-duration: var(--duration-450);
+    transition-property: transform, background-color;
+    content: '\002B'; // plus
+  }
+
+  &.is-active::after {
+    transform: rotate(0deg);
+    content: '\2212'; // minus
+  }
+
+  &:focus {
+    background-color: var(--color-primary-lighter);
+    outline: none;
+  }
+
+  .js-focus-visible &:focus:not(.focus-visible) {
+    background-color: var(--color-white);
+  }
+}
+
+/* answer layout */
+.c-accordion__answer {
+  max-height: 0;
+  overflow: hidden;
+  background-color: var(--color-neutral-lighter);
+  border-bottom: rem(1px) solid var(--color-neutral-mid);
+  transition: max-height var(--duration-450) var(--ease-out-cubic);
+
+  p {
+    padding: rem(20px) rem(37px);
+  }
+}

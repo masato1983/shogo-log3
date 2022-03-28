@@ -103,7 +103,7 @@ $letter-spacing-list: narrow, normal, wide, wider, widest;
 // line-height
 // ==========================================================================
 
-$line-height-list: none, tight, snug, normal, relaxed, loose, extra-loose;
+$line-height-list: none, tight, snug, normal, relaxed, extra-relaxed, loose, extra-loose;
 
 @each $line-height in $line-height-list {
   .c-text__lh--#{$line-height} {

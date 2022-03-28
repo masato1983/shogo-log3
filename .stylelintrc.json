@@ -37,7 +37,7 @@
         "function-no-unknown": [
             true,
             {
-                "ignoreFunctions": ["fs-rem"]
+                "ignoreFunctions": ["fs-rem", "div"]
             }
         ],
         "no-descending-specificity": null,

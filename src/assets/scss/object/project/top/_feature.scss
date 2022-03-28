@@ -71,21 +71,21 @@
 /* only media-01 layout */
 .p-top-feature__media-01 {
   @include mq($from: tablet) {
-    width: fs-rem(380px);
+    width: div(380, 1366) * 100vw;
   }
 }
 
 /* only media-02 layout */
 .p-top-feature__media-02 {
   @include mq($from: tablet) {
-    width: fs-rem(479px);
+    width: div(479, 1366) * 100vw;
   }
 }
 
 /* only media-03 layout */
 .p-top-feature__media-03 {
   @include mq($from: tablet) {
-    width: fs-rem(400px);
+    width: div(400, 1366) * 100vw;
   }
 }
 
@@ -104,7 +104,6 @@
 /* only textbox-01 layout */
 .p-top-feature__textbox-01 {
   @include mq($from: tablet) {
-    width: fs-rem(501.86px); // base size refer to firefox devtool
     margin-left: fs-rem(72px);
   }
 
@@ -116,7 +115,7 @@
 /* only textbox-02 layout */
 .p-top-feature__textbox-02 {
   @include mq($from: tablet) {
-    width: fs-rem(446.57px); // base size refer to firefox devtool
+    width: div(447, 1366) * 100vw;
     margin-right: fs-rem(52px);
   }
 
@@ -128,7 +127,7 @@
 /* only textbox-03 layout */
 .p-top-feature__textbox-03 {
   @include mq($from: tablet) {
-    width: fs-rem(349.92px); // base size refer to firefox devtool
+    width: div(350, 1366) * 100vw;
     margin-left: fs-rem(62px);
   }
 

@@ -43,6 +43,10 @@ Table component
     padding-left: rem(19px);
     border-left: 0;
   }
+
+  @include mq($from: full) {
+    width: rem(320px);
+  }
 }
 
 /* data layout */
