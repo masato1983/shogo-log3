@@ -1,0 +1,38 @@
+/* ==========================================================================
+   Top-blog project
+   ========================================================================== */
+
+@use '../../../abstracts/' as *;
+@use 'sass:math' as *;
+
+/* base layout */
+.p-top-blog {
+  padding-top: rem(55px);
+  padding-bottom: rem(91px);
+  background-color: var(--color-primary-lighter);
+}
+
+/* subtitle layout */
+.p-top-blog__subtitle {
+  margin-top: rem(10px);
+}
+
+/* body layout */
+.p-top-blog__body {
+  margin-top: rem(52px);
+}
+
+/* list layout */
+.p-top-blog__list {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 column */
+  gap: rem(30px);
+
+  @include mq($from: tablet) {
+    grid-template-columns: 1fr 1fr; /* 2 column */
+  }
+
+  @include mq($from: desktop) {
+    grid-template-columns: 1fr 1fr 1fr; /* 3 column */
+  }
+}

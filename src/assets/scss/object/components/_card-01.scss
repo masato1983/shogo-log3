@@ -1,0 +1,60 @@
+/* ==========================================================================
+Card-01 component
+========================================================================== */
+
+@use '../../abstracts/' as *;
+@use 'sass:math' as *;
+
+/* base layout */
+.c-card-01 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-white);
+  box-shadow: 0 rem(3px) rem(6px) var(--color-black-alpha-160);
+}
+
+/* media layout */
+.c-card-01__media {
+  @include fs-aspect-ratio(div(389, 260));
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-black-alpha-300);
+    opacity: 0;
+    transition: opacity var(--duration-900) var(--ease-out-cubic);
+    content: '';
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+/* image layout */
+.c-card-01__image {
+  @include fs-absolute-fill;
+
+  top: -50%; // override for parallax
+  height: auto; // override for parallax
+}
+
+/* body layout */
+.c-card-01__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: rem(14px) rem(30px) rem(10px) rem(17px);
+}
+
+/* footer layout */
+.c-card-01__footer {
+  align-self: end;
+  margin-top: auto;
+}
