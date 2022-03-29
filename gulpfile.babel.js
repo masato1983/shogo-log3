@@ -190,6 +190,18 @@ export const scripts = () => {
                                 },
                             },
                         },
+                        {
+                            // For swiper.js
+                            test: /\.css$/,
+                            use: [
+                                {
+                                    loader: 'style-loader',
+                                },
+                                {
+                                    loader: 'css-loader',
+                                },
+                            ],
+                        },
                     ],
                 },
                 output: {

@@ -1,0 +1,65 @@
+/* ==========================================================================
+Card-03 component
+========================================================================== */
+
+@use '../../abstracts/' as *;
+@use 'sass:math' as *;
+
+/* base layout */
+.c-card-02 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-white);
+  border: rem(1px) solid var(--color-gray);
+  border-radius: rem(8px);
+}
+
+/* media layout */
+.c-card-02__media {
+  @include fs-aspect-ratio(div(322, 210));
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-black-alpha-300);
+    opacity: 0;
+    transition: opacity var(--duration-900) var(--ease-out-cubic);
+    content: '';
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+/* image layout */
+.c-card-02__image {
+  @include fs-absolute-fill;
+
+  border-top-left-radius: rem(8px);
+  border-top-right-radius: rem(8px);
+}
+
+/* body layout */
+.c-card-02__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: rem(14px) rem(30px) rem(40px) rem(17px);
+}
+
+/* title layout */
+.c-card-02__title {
+  margin-bottom: auto;
+}
+
+/* description layout */
+.c-card-02__description {
+  margin-top: rem(30px);
+}
