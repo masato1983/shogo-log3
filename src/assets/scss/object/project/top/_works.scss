@@ -1,0 +1,71 @@
+/* ==========================================================================
+   Top-works project
+   ========================================================================== */
+
+@use '../../../abstracts/' as *;
+@use 'sass:math' as *;
+
+/* base layout */
+.p-top-works {
+  padding-top: rem(52px);
+  padding-bottom: rem(42px);
+  background-color: var(--color-white);
+}
+
+/* subtitle layout */
+.p-top-works__subtitle {
+  margin-top: rem(10px);
+}
+
+/* body layout */
+.p-top-works__body {
+  position: relative;
+  margin-top: rem(68px);
+}
+
+/* swiper layout */
+.p-top-works__swiper {
+  .p-top-works__swiper-slide {
+    width: 100%;
+    height: auto;
+
+    @include mq($from: landscape) {
+      width: rem(322px);
+    }
+  }
+}
+
+/* pagination layout */
+.p-top-works__swiper-pagination {
+  position: absolute;
+  bottom: rem(-64px);
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+/* bullet layout */
+.p-top-works__swiper-pagination--bullet {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(40px);
+  height: rem(40px);
+  margin-right: rem(6px);
+  margin-left: rem(6px);
+  font-weight: var(--font-weight-bold);
+  background-color: var(--color-primary-lighter);
+  border-radius: 50%;
+  opacity: 0.2;
+
+  &.is-active {
+    opacity: 1;
+  }
+
+  .p-top-works__swiper-pagination.is-clickable & {
+    cursor: pointer;
+  }
+}
