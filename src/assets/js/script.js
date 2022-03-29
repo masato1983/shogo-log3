@@ -26,3 +26,7 @@ accordionToggle();
 // parallax library
 import { parallax } from './library/parallax';
 parallax();
+
+// swiper library
+import { swiper } from './library/swiper';
+swiper();
