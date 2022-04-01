@@ -6,10 +6,10 @@
 
 import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 import { sequenceFadeInGlobalNavigationText } from '../library/sequenceFadeIn';
-import breakpoints from '../../../json/breakpoints.json';
+import { breakpoint } from '../../../json/breakpoints.json';
 
 export const hamburgerMenuToggle = () => {
-    const tablet = breakpoints.breakpoint.tablet;
+    const { tablet } = breakpoint; // ES6 Destructuring assignment
 
     const hamburgerButton = document.querySelector('.c-hamburger');
     const headerNavigation = document.querySelector('.l-header__navigation');
