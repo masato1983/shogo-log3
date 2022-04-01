@@ -3,45 +3,39 @@
 // https://swiperjs.com/
 // ============================================================================
 
-import Swiper, { Pagination, Autoplay } from 'swiper';
+import Swiper, { Navigation, Pagination, Autoplay, Mousewheel } from 'swiper';
 import 'swiper/css';
-import 'swiper/css/pagination';
 
 export const swiper = () => {
-    const targetSwiperWorks = document.querySelector('.p-top-works__swiper');
-    const targetPaginationWorks = document.querySelector('.p-top-works__swiper-pagination');
-    const numberOfImage = document.querySelectorAll('.p-top-works__swiper-slide').length;
+    const numberOfImage = document.querySelectorAll('.p-top-works__swiper-container .swiper-slide').length;
 
     let loop = null;
-    let autoplay = null;
     let centeredSlides = null;
 
-    if (numberOfImage < 5) {
+    if (numberOfImage <= 4) {
         loop = false;
         centeredSlides = false;
-        autoplay = {
-            delay: 5000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-        };
     } else {
         loop = true;
         centeredSlides = true;
-        autoplay = {
-            delay: 5000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-        };
     }
 
     const option = {
-        modules: [Pagination, Autoplay],
+        modules: [Navigation, Pagination, Autoplay, Mousewheel],
         slidesPerView: 'auto',
         spaceBetween: 28,
-        loop: loop,
-        centeredSlides: centeredSlides,
+        loop, // ES6 Object literal
+        centeredSlides, // ES6 Object literal
         speed: 500,
-        autoplay: autoplay,
+        mousewheel: {
+            eventsTarget: '.p-top-works__swiper-container .swiper',
+            forceToAxis: true,
+        },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
         breakpoints: {
             768: {
                 spaceBetween: 36,
@@ -54,20 +48,21 @@ export const swiper = () => {
             },
         },
         pagination: {
-            el: targetPaginationWorks,
+            el: '.p-top-works__swiper-container .swiper-pagination',
             type: 'bullets',
             bulletElement: 'span',
-            bulletClass: 'p-top-works__swiper-pagination--bullet',
             bulletActiveClass: 'is-active',
             clickable: true,
             clickableClass: 'is-clickable',
-            horizontalClass: 'p-top-works__swiper--horizontal',
-            modifierClass: 'p-top-works__swiper-pagination--',
             renderBullet: (index, className) => {
                 return `<span class="${className}">${index + 1}</span>`;
             },
         },
+        navigation: {
+            nextEl: '.p-top-works__swiper-container .swiper-button-next',
+            prevEl: '.p-top-works__swiper-container .swiper-button-prev',
+        },
     };
 
-    const swiper = new Swiper(targetSwiperWorks, option);
+    const swiperWorks = new Swiper('.p-top-works__swiper-container .swiper', option);
 };

@@ -30,3 +30,7 @@ parallax();
 // swiper library
 import { swiper } from './library/swiper';
 swiper();
+
+// splide library
+// import { splide } from './library/splide';
+// splide();
