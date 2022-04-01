@@ -249,118 +249,251 @@
 
             <!-- works section -->
             <section class="p-top-works" id="top-works">
-                <div class="l-container l-container--md">
+                <div class="l-container">
                     <div class="p-top-works__inner">
                         <div class="p-top-works__title">
                             <h2 class="p-top-works__heading--lv2 c-text__size--3xl c-text__weight--bold c-text__align--center">制作実績</h2>
                             <span class="p-top-works__subtitle c-text__weight--bold c-text__color--primary-mid c-text__align--center c-text__uppercase u-display__block">works</span>
                         </div>
                         <div class="p-top-works__body">
-                            <div class="p-top-works__swiper swiper">
-                                <div class="p-top-works__swiper-wrapper swiper-wrapper">
-                                    <div class="p-top-works__swiper-slide swiper-slide">
-                                        <a href="" class="c-card-02">
-                                            <div class="c-card-02__media">
-                                                <picture>
-                                                    <source type="image/webp" sizes="" srcset="<%= meta.path['img:top'] %>top-works-05-322x210.webp 322w, <%= meta.path['img:top'] %>top-works-05-644x420.webp 644w, <%= meta.path['img:top'] %>top-works-05-966x630.webp 966w" />
-                                                    <img class="c-card-02__image" width="322" height="210" src="<%= meta.path['img:top'] %>top-works-05-966x630.jpg" sizes="" srcset="<%= meta.path['img:top'] %>top-works-05-322x210.jpg 322w, <%= meta.path['img:top'] %>top-works-05-644x420.jpg 644w, <%= meta.path['img:top'] %>top-works-05-966x630.jpg 966w" alt="" decoding="async" loading="lazy" />
-                                                </picture>
-                                            </div>
-                                            <div class="c-card-02__body c-text__weight--bold">
-                                                <div class="c-card-02__title">
-                                                    <h3 class="c-card-02__heading--lv3">株式会社サンプル採用サイトのコーディングを行いました！</h3>
+                            <!-- For swiper -->
+                            <div class="p-top-works__swiper-container">
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <a href="" class="c-card-02">
+                                                <div class="c-card-02__media">
+                                                    <picture>
+                                                        <source type="image/webp" sizes="" srcset="<%= meta.path['img:top'] %>top-works-05-322x210.webp 322w, <%= meta.path['img:top'] %>top-works-05-644x420.webp 644w, <%= meta.path['img:top'] %>top-works-05-966x630.webp 966w" />
+                                                        <img class="c-card-02__image" width="322" height="210" src="<%= meta.path['img:top'] %>top-works-05-966x630.jpg" sizes="" srcset="<%= meta.path['img:top'] %>top-works-05-322x210.jpg 322w, <%= meta.path['img:top'] %>top-works-05-644x420.jpg 644w, <%= meta.path['img:top'] %>top-works-05-966x630.jpg 966w" alt="" decoding="async" loading="lazy" />
+                                                    </picture>
                                                 </div>
-                                                <div class="c-card-02__description c-text__size--sm">
-                                                    <p class="c-card-02__text">採用技術：jQuery,Bootstrap4</p>
-                                                    <p class="c-card-02__text">実装期間：2週間</p>
-                                                    <p class="c-card-02__text">担当コーダー：石井</p>
+                                                <div class="c-card-02__body c-text__weight--bold">
+                                                    <div class="c-card-02__title">
+                                                        <h3 class="c-card-02__heading--lv3">株式会社サンプル採用サイトのコーディングを行いました！</h3>
+                                                    </div>
+                                                    <div class="c-card-02__description c-text__size--sm">
+                                                        <p class="c-card-02__text">採用技術：jQuery,Bootstrap4</p>
+                                                        <p class="c-card-02__text">実装期間：2週間</p>
+                                                        <p class="c-card-02__text">担当コーダー：石井</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </a>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="" class="c-card-02">
+                                                <div class="c-card-02__media">
+                                                    <picture>
+                                                        <source type="image/webp" sizes="" srcset="<%= meta.path['img:top'] %>top-works-01-322x210.webp 322w, <%= meta.path['img:top'] %>top-works-01-644x420.webp 644w, <%= meta.path['img:top'] %>top-works-01-966x630.webp 966w" />
+                                                        <img class="c-card-02__image" width="322" height="210" src="<%= meta.path['img:top'] %>top-works-01-966x630.jpg" sizes="" srcset="<%= meta.path['img:top'] %>top-works-01-322x210.jpg 322w, <%= meta.path['img:top'] %>top-works-01-644x420.jpg 644w, <%= meta.path['img:top'] %>top-works-01-966x630.jpg 966w" alt="" decoding="async" loading="lazy" />
+                                                    </picture>
+                                                </div>
+                                                <div class="c-card-02__body c-text__weight--bold">
+                                                    <div class="c-card-02__title">
+                                                        <h3 class="c-card-02__heading--lv3">コーディングカンファレンスのイベントLPの制作を行いました！</h3>
+                                                    </div>
+                                                    <div class="c-card-02__description c-text__size--sm">
+                                                        <p class="c-card-02__text">採用技術：jQuery,WordPress</p>
+                                                        <p class="c-card-02__text">実装期間：4週間</p>
+                                                        <p class="c-card-02__text">担当コーダー：石井</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="" class="c-card-02">
+                                                <div class="c-card-02__media">
+                                                    <picture>
+                                                        <source type="image/webp" sizes="" srcset="<%= meta.path['img:top'] %>top-works-02-322x210.webp 322w, <%= meta.path['img:top'] %>top-works-02-644x420.webp 644w, <%= meta.path['img:top'] %>top-works-02-966x630.webp 966w" />
+                                                        <img class="c-card-02__image" width="322" height="210" src="<%= meta.path['img:top'] %>top-works-02-966x630.jpg" sizes="" srcset="<%= meta.path['img:top'] %>top-works-02-322x210.jpg 322w, <%= meta.path['img:top'] %>top-works-02-644x420.jpg 644w, <%= meta.path['img:top'] %>top-works-02-966x630.jpg 966w" alt="" decoding="async" loading="lazy" />
+                                                    </picture>
+                                                </div>
+                                                <div class="c-card-02__body c-text__weight--bold">
+                                                    <div class="c-card-02__title">
+                                                        <h3 class="c-card-02__heading--lv3">株式会社サンプル採用サイトのコーディングを行いました！</h3>
+                                                    </div>
+                                                    <div class="c-card-02__description c-text__size--sm">
+                                                        <p class="c-card-02__text">採用技術：jQuery,Bootstrap4</p>
+                                                        <p class="c-card-02__text">実装期間：2週間</p>
+                                                        <p class="c-card-02__text">担当コーダー：石井</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="" class="c-card-02">
+                                                <div class="c-card-02__media">
+                                                    <picture>
+                                                        <source type="image/webp" sizes="" srcset="<%= meta.path['img:top'] %>top-works-03-322x210.webp 322w, <%= meta.path['img:top'] %>top-works-03-644x420.webp 644w, <%= meta.path['img:top'] %>top-works-03-966x630.webp 966w" />
+                                                        <img class="c-card-02__image" width="322" height="210" src="<%= meta.path['img:top'] %>top-works-03-966x630.jpg" sizes="" srcset="<%= meta.path['img:top'] %>top-works-03-322x210.jpg 322w, <%= meta.path['img:top'] %>top-works-03-644x420.jpg 644w, <%= meta.path['img:top'] %>top-works-03-966x630.jpg 966w" alt="" decoding="async" loading="lazy" />
+                                                    </picture>
+                                                </div>
+                                                <div class="c-card-02__body c-text__weight--bold">
+                                                    <div class="c-card-02__title">
+                                                        <h3 class="c-card-02__heading--lv3">株式会社サンプル採用サイトのコーディングを行いました！</h3>
+                                                    </div>
+                                                    <div class="c-card-02__description c-text__size--sm">
+                                                        <p class="c-card-02__text">採用技術：jQuery,Bootstrap4</p>
+                                                        <p class="c-card-02__text">実装期間：2週間</p>
+                                                        <p class="c-card-02__text">担当コーダー：石井</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="" class="c-card-02">
+                                                <div class="c-card-02__media">
+                                                    <picture>
+                                                        <source type="image/webp" sizes="" srcset="<%= meta.path['img:top'] %>top-works-04-322x210.webp 322w, <%= meta.path['img:top'] %>top-works-04-644x420.webp 644w, <%= meta.path['img:top'] %>top-works-04-966x630.webp 966w" />
+                                                        <img class="c-card-02__image" width="322" height="210" src="<%= meta.path['img:top'] %>top-works-04-966x630.jpg" sizes="" srcset="<%= meta.path['img:top'] %>top-works-04-322x210.jpg 322w, <%= meta.path['img:top'] %>top-works-04-644x420.jpg 644w, <%= meta.path['img:top'] %>top-works-04-966x630.jpg 966w" alt="" decoding="async" loading="lazy" />
+                                                    </picture>
+                                                </div>
+                                                <div class="c-card-02__body c-text__weight--bold">
+                                                    <div class="c-card-02__title">
+                                                        <h3 class="c-card-02__heading--lv3">コーダー募集</h3>
+                                                    </div>
+                                                    <div class="c-card-02__description c-text__size--sm">
+                                                        <p class="c-card-02__text">採用技術：jQuery,Bootstrap4</p>
+                                                        <p class="c-card-02__text">実装期間：2週間</p>
+                                                        <p class="c-card-02__text">担当コーダー：石井</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
-                                    <div class="p-top-works__swiper-slide swiper-slide">
-                                        <a href="" class="c-card-02">
-                                            <div class="c-card-02__media">
-                                                <picture>
-                                                    <source type="image/webp" sizes="" srcset="<%= meta.path['img:top'] %>top-works-01-322x210.webp 322w, <%= meta.path['img:top'] %>top-works-01-644x420.webp 644w, <%= meta.path['img:top'] %>top-works-01-966x630.webp 966w" />
-                                                    <img class="c-card-02__image" width="322" height="210" src="<%= meta.path['img:top'] %>top-works-01-966x630.jpg" sizes="" srcset="<%= meta.path['img:top'] %>top-works-01-322x210.jpg 322w, <%= meta.path['img:top'] %>top-works-01-644x420.jpg 644w, <%= meta.path['img:top'] %>top-works-01-966x630.jpg 966w" alt="" decoding="async" loading="lazy" />
-                                                </picture>
-                                            </div>
-                                            <div class="c-card-02__body c-text__weight--bold">
-                                                <div class="c-card-02__title">
-                                                    <h3 class="c-card-02__heading--lv3">コーディングカンファレンスのイベントLPの制作を行いました！</h3>
-                                                </div>
-                                                <div class="c-card-02__description c-text__size--sm">
-                                                    <p class="c-card-02__text">採用技術：jQuery,WordPress</p>
-                                                    <p class="c-card-02__text">実装期間：4週間</p>
-                                                    <p class="c-card-02__text">担当コーダー：石井</p>
-                                                </div>
-                                            </div>
-                                        </a>
+                                    <div class="swiper-button-prev">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20.3284 11.0001V13.0001L7.50011 13.0001L10.7426 16.2426L9.32842 17.6568L3.67157 12L9.32842 6.34314L10.7426 7.75735L7.49988 11.0001L20.3284 11.0001Z" fill="currentColor" />
+                                        </svg>
                                     </div>
-                                    <div class="p-top-works__swiper-slide swiper-slide">
-                                        <a href="" class="c-card-02">
-                                            <div class="c-card-02__media">
-                                                <picture>
-                                                    <source type="image/webp" sizes="" srcset="<%= meta.path['img:top'] %>top-works-02-322x210.webp 322w, <%= meta.path['img:top'] %>top-works-02-644x420.webp 644w, <%= meta.path['img:top'] %>top-works-02-966x630.webp 966w" />
-                                                    <img class="c-card-02__image" width="322" height="210" src="<%= meta.path['img:top'] %>top-works-02-966x630.jpg" sizes="" srcset="<%= meta.path['img:top'] %>top-works-02-322x210.jpg 322w, <%= meta.path['img:top'] %>top-works-02-644x420.jpg 644w, <%= meta.path['img:top'] %>top-works-02-966x630.jpg 966w" alt="" decoding="async" loading="lazy" />
-                                                </picture>
-                                            </div>
-                                            <div class="c-card-02__body c-text__weight--bold">
-                                                <div class="c-card-02__title">
-                                                    <h3 class="c-card-02__heading--lv3">株式会社サンプル採用サイトのコーディングを行いました！</h3>
-                                                </div>
-                                                <div class="c-card-02__description c-text__size--sm">
-                                                    <p class="c-card-02__text">採用技術：jQuery,Bootstrap4</p>
-                                                    <p class="c-card-02__text">実装期間：2週間</p>
-                                                    <p class="c-card-02__text">担当コーダー：石井</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="p-top-works__swiper-slide swiper-slide">
-                                        <a href="" class="c-card-02">
-                                            <div class="c-card-02__media">
-                                                <picture>
-                                                    <source type="image/webp" sizes="" srcset="<%= meta.path['img:top'] %>top-works-03-322x210.webp 322w, <%= meta.path['img:top'] %>top-works-03-644x420.webp 644w, <%= meta.path['img:top'] %>top-works-03-966x630.webp 966w" />
-                                                    <img class="c-card-02__image" width="322" height="210" src="<%= meta.path['img:top'] %>top-works-03-966x630.jpg" sizes="" srcset="<%= meta.path['img:top'] %>top-works-03-322x210.jpg 322w, <%= meta.path['img:top'] %>top-works-03-644x420.jpg 644w, <%= meta.path['img:top'] %>top-works-03-966x630.jpg 966w" alt="" decoding="async" loading="lazy" />
-                                                </picture>
-                                            </div>
-                                            <div class="c-card-02__body c-text__weight--bold">
-                                                <div class="c-card-02__title">
-                                                    <h3 class="c-card-02__heading--lv3">株式会社サンプル採用サイトのコーディングを行いました！</h3>
-                                                </div>
-                                                <div class="c-card-02__description c-text__size--sm">
-                                                    <p class="c-card-02__text">採用技術：jQuery,Bootstrap4</p>
-                                                    <p class="c-card-02__text">実装期間：2週間</p>
-                                                    <p class="c-card-02__text">担当コーダー：石井</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="p-top-works__swiper-slide swiper-slide">
-                                        <a href="" class="c-card-02">
-                                            <div class="c-card-02__media">
-                                                <picture>
-                                                    <source type="image/webp" sizes="" srcset="<%= meta.path['img:top'] %>top-works-04-322x210.webp 322w, <%= meta.path['img:top'] %>top-works-04-644x420.webp 644w, <%= meta.path['img:top'] %>top-works-04-966x630.webp 966w" />
-                                                    <img class="c-card-02__image" width="322" height="210" src="<%= meta.path['img:top'] %>top-works-04-966x630.jpg" sizes="" srcset="<%= meta.path['img:top'] %>top-works-04-322x210.jpg 322w, <%= meta.path['img:top'] %>top-works-04-644x420.jpg 644w, <%= meta.path['img:top'] %>top-works-04-966x630.jpg 966w" alt="" decoding="async" loading="lazy" />
-                                                </picture>
-                                            </div>
-                                            <div class="c-card-02__body c-text__weight--bold">
-                                                <div class="c-card-02__title">
-                                                    <h3 class="c-card-02__heading--lv3">コーダー募集</h3>
-                                                </div>
-                                                <div class="c-card-02__description c-text__size--sm">
-                                                    <p class="c-card-02__text">採用技術：jQuery,Bootstrap4</p>
-                                                    <p class="c-card-02__text">実装期間：2週間</p>
-                                                    <p class="c-card-02__text">担当コーダー：石井</p>
-                                                </div>
-                                            </div>
-                                        </a>
+                                    <div class="swiper-button-next">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15.0378 6.34317L13.6269 7.76069L16.8972 11.0157L3.29211 11.0293L3.29413 13.0293L16.8619 13.0157L13.6467 16.2459L15.0643 17.6568L20.7079 11.9868L15.0378 6.34317Z" fill="currentColor" />
+                                        </svg>
                                     </div>
                                 </div>
+                                <div class="swiper-pagination"></div>
                             </div>
-                            <div class="p-top-works__swiper-pagination"></div>
+                            <!-- end for swiper -->
+
+                            <!-- for spride -->
+                            <!-- <div class="p-top-works__splide splide">
+                                <div class="p-top-works__splide__slider splide__slider">
+                                    <div class="splide__arrows">
+                                        <button class="splide__arrow splide__arrow--prev">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                                        </button>
+                                        <button class="splide__arrow splide__arrow--next">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                        </button>
+                                    </div>
+                                    <div class="p-top-works__splide__track splide__track">
+                                        <ul class="p-top-works__splide__list splide__list">
+                                            <li class="p-top-works__splide__slide splide__slide">
+                                                <a href="" class="c-card-02">
+                                                    <div class="c-card-02__media">
+                                                        <picture>
+                                                            <source type="image/webp" sizes="" srcset="<%= meta.path['img:top'] %>top-works-05-322x210.webp 322w, <%= meta.path['img:top'] %>top-works-05-644x420.webp 644w, <%= meta.path['img:top'] %>top-works-05-966x630.webp 966w" />
+                                                            <img class="c-card-02__image" width="322" height="210" src="<%= meta.path['img:top'] %>top-works-05-966x630.jpg" sizes="" srcset="<%= meta.path['img:top'] %>top-works-05-322x210.jpg 322w, <%= meta.path['img:top'] %>top-works-05-644x420.jpg 644w, <%= meta.path['img:top'] %>top-works-05-966x630.jpg 966w" alt="" decoding="async" loading="lazy" />
+                                                        </picture>
+                                                    </div>
+                                                    <div class="c-card-02__body c-text__weight--bold">
+                                                        <div class="c-card-02__title">
+                                                            <h3 class="c-card-02__heading--lv3">株式会社サンプル採用サイトのコーディングを行いました！</h3>
+                                                        </div>
+                                                        <div class="c-card-02__description c-text__size--sm">
+                                                            <p class="c-card-02__text">採用技術：jQuery,Bootstrap4</p>
+                                                            <p class="c-card-02__text">実装期間：2週間</p>
+                                                            <p class="c-card-02__text">担当コーダー：石井</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="p-top-works__splide__slide splide__slide">
+                                                <a href="" class="c-card-02">
+                                                    <div class="c-card-02__media">
+                                                        <picture>
+                                                            <source type="image/webp" sizes="" srcset="<%= meta.path['img:top'] %>top-works-01-322x210.webp 322w, <%= meta.path['img:top'] %>top-works-01-644x420.webp 644w, <%= meta.path['img:top'] %>top-works-01-966x630.webp 966w" />
+                                                            <img class="c-card-02__image" width="322" height="210" src="<%= meta.path['img:top'] %>top-works-01-966x630.jpg" sizes="" srcset="<%= meta.path['img:top'] %>top-works-01-322x210.jpg 322w, <%= meta.path['img:top'] %>top-works-01-644x420.jpg 644w, <%= meta.path['img:top'] %>top-works-01-966x630.jpg 966w" alt="" decoding="async" loading="lazy" />
+                                                        </picture>
+                                                    </div>
+                                                    <div class="c-card-02__body c-text__weight--bold">
+                                                        <div class="c-card-02__title">
+                                                            <h3 class="c-card-02__heading--lv3">コーディングカンファレンスのイベントLPの制作を行いました！</h3>
+                                                        </div>
+                                                        <div class="c-card-02__description c-text__size--sm">
+                                                            <p class="c-card-02__text">採用技術：jQuery,WordPress</p>
+                                                            <p class="c-card-02__text">実装期間：4週間</p>
+                                                            <p class="c-card-02__text">担当コーダー：石井</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="p-top-works__splide__slide splide__slide">
+                                                <a href="" class="c-card-02">
+                                                    <div class="c-card-02__media">
+                                                        <picture>
+                                                            <source type="image/webp" sizes="" srcset="<%= meta.path['img:top'] %>top-works-02-322x210.webp 322w, <%= meta.path['img:top'] %>top-works-02-644x420.webp 644w, <%= meta.path['img:top'] %>top-works-02-966x630.webp 966w" />
+                                                            <img class="c-card-02__image" width="322" height="210" src="<%= meta.path['img:top'] %>top-works-02-966x630.jpg" sizes="" srcset="<%= meta.path['img:top'] %>top-works-02-322x210.jpg 322w, <%= meta.path['img:top'] %>top-works-02-644x420.jpg 644w, <%= meta.path['img:top'] %>top-works-02-966x630.jpg 966w" alt="" decoding="async" loading="lazy" />
+                                                        </picture>
+                                                    </div>
+                                                    <div class="c-card-02__body c-text__weight--bold">
+                                                        <div class="c-card-02__title">
+                                                            <h3 class="c-card-02__heading--lv3">株式会社サンプル採用サイトのコーディングを行いました！</h3>
+                                                        </div>
+                                                        <div class="c-card-02__description c-text__size--sm">
+                                                            <p class="c-card-02__text">採用技術：jQuery,Bootstrap4</p>
+                                                            <p class="c-card-02__text">実装期間：2週間</p>
+                                                            <p class="c-card-02__text">担当コーダー：石井</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="p-top-works__splide__slide splide__slide">
+                                                <a href="" class="c-card-02">
+                                                    <div class="c-card-02__media">
+                                                        <picture>
+                                                            <source type="image/webp" sizes="" srcset="<%= meta.path['img:top'] %>top-works-03-322x210.webp 322w, <%= meta.path['img:top'] %>top-works-03-644x420.webp 644w, <%= meta.path['img:top'] %>top-works-03-966x630.webp 966w" />
+                                                            <img class="c-card-02__image" width="322" height="210" src="<%= meta.path['img:top'] %>top-works-03-966x630.jpg" sizes="" srcset="<%= meta.path['img:top'] %>top-works-03-322x210.jpg 322w, <%= meta.path['img:top'] %>top-works-03-644x420.jpg 644w, <%= meta.path['img:top'] %>top-works-03-966x630.jpg 966w" alt="" decoding="async" loading="lazy" />
+                                                        </picture>
+                                                    </div>
+                                                    <div class="c-card-02__body c-text__weight--bold">
+                                                        <div class="c-card-02__title">
+                                                            <h3 class="c-card-02__heading--lv3">株式会社サンプル採用サイトのコーディングを行いました！</h3>
+                                                        </div>
+                                                        <div class="c-card-02__description c-text__size--sm">
+                                                            <p class="c-card-02__text">採用技術：jQuery,Bootstrap4</p>
+                                                            <p class="c-card-02__text">実装期間：2週間</p>
+                                                            <p class="c-card-02__text">担当コーダー：石井</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="p-top-works__splide__slide splide__slide">
+                                                <a href="" class="c-card-02">
+                                                    <div class="c-card-02__media">
+                                                        <picture>
+                                                            <source type="image/webp" sizes="" srcset="<%= meta.path['img:top'] %>top-works-04-322x210.webp 322w, <%= meta.path['img:top'] %>top-works-04-644x420.webp 644w, <%= meta.path['img:top'] %>top-works-04-966x630.webp 966w" />
+                                                            <img class="c-card-02__image" width="322" height="210" src="<%= meta.path['img:top'] %>top-works-04-966x630.jpg" sizes="" srcset="<%= meta.path['img:top'] %>top-works-04-322x210.jpg 322w, <%= meta.path['img:top'] %>top-works-04-644x420.jpg 644w, <%= meta.path['img:top'] %>top-works-04-966x630.jpg 966w" alt="" decoding="async" loading="lazy" />
+                                                        </picture>
+                                                    </div>
+                                                    <div class="c-card-02__body c-text__weight--bold">
+                                                        <div class="c-card-02__title">
+                                                            <h3 class="c-card-02__heading--lv3">コーダー募集</h3>
+                                                        </div>
+                                                        <div class="c-card-02__description c-text__size--sm">
+                                                            <p class="c-card-02__text">採用技術：jQuery,Bootstrap4</p>
+                                                            <p class="c-card-02__text">実装期間：2週間</p>
+                                                            <p class="c-card-02__text">担当コーダー：石井</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <!-- end spride -->
                         </div>
                     </div>
                 </div>
