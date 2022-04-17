@@ -270,7 +270,7 @@ export const cacheBusting = () => {
             revAll.revision({
                 transformFilename: function (file, hash) {
                     var ext = path.extname(file.path);
-                    return path.basename(file.path, ext) + '-' + hash.substr(0, 8) + ext;
+                    return hash.substr(0, 4) + '-' + path.basename(file.path, ext) + ext;
                 },
                 prefix: !PRODUCTION ? '' : info.homepage,
                 dontRenameFile: ['.html'],
