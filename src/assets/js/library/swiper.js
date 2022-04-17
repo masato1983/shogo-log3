@@ -9,8 +9,8 @@ import 'swiper/css';
 export const swiper = () => {
     const numberOfImage = document.querySelectorAll('.p-top-works__swiper-container .swiper-slide').length;
 
-    let loop = null;
-    let centeredSlides = null;
+    let loop = null,
+        centeredSlides = null;
 
     if (numberOfImage <= 4) {
         loop = false;
