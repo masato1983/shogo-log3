@@ -8,10 +8,10 @@
 const onlyOnePanelOpen = false;
 
 export const accordionToggle = () => {
-    const accordion = document.querySelector('.c-accordion');
-    const buttons = document.querySelectorAll('.c-accordion__button');
-    const buttonActive = document.querySelector('.c-accordion__button.is-active');
-    const answerActive = buttonActive.nextElementSibling;
+    const accordion = document.querySelector('.c-accordion'),
+        buttons = document.querySelectorAll('.c-accordion__button'),
+        buttonActive = document.querySelector('.c-accordion__button.is-active'),
+        answerActive = buttonActive.nextElementSibling;
 
     if (buttonActive) {
         buttonActive.setAttribute('aria-expanded', true);
