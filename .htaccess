@@ -179,7 +179,7 @@ FileETag None
 # | Content Security Policy (CSP)                                      |
 # ----------------------------------------------------------------------
 <IfModule mod_headers.c>
-    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' maps.googleapis.com https://sdk.form.run/js/v2/formrun.js; img-src 'self' data: maps.gstatic.com *.googleapis.com *.ggpht.com *.ytimg.com *.youtube.com; child-src https://www.google.com/ https://www.youtube.com; font-src 'self' fonts.gstatic.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; base-uri 'none'; form-action 'self' https://form.run; frame-ancestors 'none'; object-src 'none'; connect-src maps.googleapis.com;"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-eval' maps.googleapis.com https://sdk.form.run/js/v2/formrun.js; img-src 'self' data: maps.gstatic.com *.googleapis.com *.ggpht.com *.ytimg.com *.youtube.com; child-src https://www.google.com/ https://www.youtube.com; font-src 'self' data: fonts.gstatic.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; base-uri 'none'; form-action 'self' https://form.run; frame-ancestors 'none'; object-src 'none'; connect-src maps.googleapis.com;"
 </IfModule>
 
 
