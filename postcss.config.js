@@ -15,6 +15,9 @@ module.exports = ({ env }) => ({
                   keyframes: true,
                   fontFace: true,
                   variables: true,
+                  safelist: {
+                      deep: [/p-top-works__swiper-container$/]
+                  }
               })
             : false,
     ],
