@@ -7,8 +7,8 @@
     <meta name="description" content="<%= page['description'] %>" />
     <meta name="format-detection" content="telephone=no" />
 
-    <!-- crawlersNoindexNofollow (公開時削除) -->
     <% if(process.env.NODE_ENV === 'development') { %>
+    <!-- crawlersNoindexNofollow (公開時削除) -->
     <meta name="robots" content="noindex, nofollow" />
     <% } %>
 
@@ -46,8 +46,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <!-- canonical -->
     <% if(process.env.NODE_ENV === 'production') { %>
+    <!-- canonical -->
     <link rel="canonical" href="<%= package.homepage %>" />
     <% } %>
 
@@ -56,13 +56,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet" />
 
-    <!-- stylesheet -->
+    <!-- stylesheet(vendor) -->
     <link rel="stylesheet" href="<%= meta.path['css:vendors'] %>destyle.css" />
     <link rel="stylesheet" href="<%= meta.path['css:vendors'] %>aos.css" />
-    <link rel="stylesheet" href="<%= meta.path['css'] %>style.css" />
 
+    <% if (process.env.NODE_ENV === 'production') { %>
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="<%= meta.path['css'] %>style.min.css" />
+    <% } else { %>
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="<%= meta.path['css'] %>style.css" />
+    <% } %>
+
+    <% if (process.env.NODE_ENV === 'production') { %>
+    <!-- script -->
+    <script src="<%= meta.path['js'] %>script.min.js" defer></script>
+    <% } else { %>
     <!-- script -->
     <script src="<%= meta.path['js'] %>script.js" defer></script>
+    <% } %>
 
     <!-- structured data -->
     <script type="application/ld+json">
