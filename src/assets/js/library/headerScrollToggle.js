@@ -4,16 +4,14 @@
 // ============================================================================
 
 export let headerScrollToggle = () => {
-    let curScroll = window.scrollY || document.documentElement.scrollTop;
-    let prevScroll = window.scrollY || document.documentElement.scrollTop;
-    let curDirection = 0;
-    let prevDirection = 0;
-
-    let header = document.querySelector('.l-header');
-    let headerNavigation = document.querySelector('.l-header__navigation');
-
-    let threshold = 200;
-    let toggled;
+    let curScroll = window.scrollY || document.documentElement.scrollTop,
+        prevScroll = window.scrollY || document.documentElement.scrollTop,
+        curDirection = 0,
+        prevDirection = 0,
+        header = document.querySelector('.l-header'),
+        headerNavigation = document.querySelector('.l-header__navigation'),
+        threshold = 200,
+        toggled;
 
     let checkScroll = () => {
         curScroll = window.pageYOffset || document.documentElement.scrollTop;
