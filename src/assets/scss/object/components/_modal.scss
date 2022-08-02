@@ -1,0 +1,46 @@
+/* ==========================================================================
+modal component
+========================================================================== */
+
+@use '../../abstracts/' as *;
+@use 'sass:math' as *;
+
+.c-modal {
+    display: block;
+    pointer-events: none;
+    max-width: rem(1200px);
+    width: 80%;
+    border: 0;
+    box-shadow: 0 0 1em var(--color-black-alpha-500);
+}
+
+.c-modal[open] {
+    animation: fade-in 1000ms forwards;
+}
+
+.c-modal::backdrop {
+    background: rgba($color: #000000, $alpha: 0.5); 
+    opacity: 0;
+}
+
+.c-modal[open]::backdrop {
+    animation: fade-in 1000ms forwards;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

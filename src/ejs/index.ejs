@@ -222,8 +222,8 @@
                                         </div>
                                     </a>
                                 </li>
-                                <li class="p-top-blog__item">
-                                    <a href="" class="c-card-01">
+                                <li class="p-top-blog__item c-modal__open-button" data-modal="#modal3">
+                                    <div class="c-card-01">
                                         <div class="c-card-01__media">
                                             <picture>
                                                 <source type="image/webp" sizes="" srcset="<%= meta.path['img:top'] %>top-blog-03-480x854.webp 480w, <%= meta.path['img:top'] %>top-blog-03-640x1138.webp 640w, <%= meta.path['img:top'] %>top-blog-03-960x1708.webp 960w" />
@@ -238,8 +238,14 @@
                                                 <time class="c-card-01__date c-text__weight--bold c-text__color--neutral-darker" datetime="2020-01-25">2020.01.25</time>
                                             </div>
                                         </div>
-                                    </a>
+                                    </div>
                                 </li>
+                                <dialog class="c-modal" id="modal3">
+                                    <h2>An interesting title</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum beatae nesciunt enim optio totam earum aliquid ullam quibusdam, similique esse nihil perspiciatis a, ipsam aliquam ipsum animi eos, quis illum?</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum placeat recusandae voluptates similique laudantium nisi expedita nam! Eos necessitatibus labore adipisci magnam dolorum minima incidunt, eveniet veritatis et architecto odio?</p>
+                                    <button class="c-button c-modal__close-button">close modal</button>
+                                </dialog>
                             </ul>
                         </div>
                     </div>

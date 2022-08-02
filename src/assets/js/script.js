@@ -34,3 +34,7 @@ swiper();
 // splide library
 // import { splide } from './library/splide';
 // splide();
+
+// modal library
+import { modal } from './library/modal';
+modal();
