@@ -30,7 +30,7 @@
         "@linthtml/linthtml-config-recommended": "0.1.0",
         "@namics/stylelint-bem": "7.0.0",
         "@ronilaukkarinen/gulp-stylelint": "14.0.6",
-        "@squoosh/cli": "0.7.2",
+        "@squoosh/cli": "0.7.3",
         "@typescript-eslint/eslint-plugin": "5.16.0",
         "@typescript-eslint/parser": "5.16.0",
         "animejs": "3.2.1",
