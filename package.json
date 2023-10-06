@@ -93,7 +93,7 @@
         "object-fit-images": "3.2.4",
         "path": "0.12.7",
         "picturefill": "3.0.3",
-        "postcss": "8.4.12",
+        "postcss": "8.4.31",
         "postcss-100vh-fix": "1.0.2",
         "postcss-cli": "9.1.0",
         "postcss-clip-path-polyfill": "1.1.0",
