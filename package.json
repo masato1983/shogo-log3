@@ -105,7 +105,7 @@
         "postcss-viewport-height-correction": "1.1.1",
         "prettier": "2.6.1",
         "rimraf": "3.0.2",
-        "sass": "1.49.9",
+        "sass": "1.72.0",
         "sass-mq": "6.0.0",
         "scroll-lock": "2.1.5",
         "smooth-scroll": "16.1.3",
